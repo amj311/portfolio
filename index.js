@@ -26,6 +26,12 @@ const app = new Vue({
                 this.dataIsLoading = false;
             }, 50);
 
+            setTimeout(()=>{
+                let wavesEl = document.querySelector('.wave-section')
+                // const wavesEl = this.$ref.waves.el;
+                new MouseBubbleGenerator(wavesEl).activate();
+            }, 100)
+
         }
     }
 
