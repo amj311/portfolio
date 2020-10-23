@@ -19,15 +19,21 @@
             Loading...
         </div>
         <div v-else style="display: none;" :style="{display: dataIsLoading ? 'none' : 'block !important'}">
-            <div id="navWrapper">
+            <div id="navWrapper" class="max-width">
                 <div id="logoBubble" class="nav-bubble" v-html="portfolioData.brandSvg"></div>
             </div>
     
-            <section id="hero">
+            <section id="hero" class="before-wave">
                 <div class="content">
                     <div class="body">
-                        <div class="bubble-box bubble-particle-field" style="width: 10rem;">
-                            <img src="headshot.jpg" alt="headshot" style="width:100%" />
+                        <div id="headshot">
+                            <div class="bubble-box bubble-particle-field" style="width: 12rem;">
+                                <img src="headshot.jpg" alt="headshot" style="width:100%" />
+                            </div>    
+                        </div>
+                        <div id="summary">
+                            <h1>👋 Hi, I'm <span class="text-primary">Arthur!</span></h1>
+                            <p>Do esse qui id quis nulla duis cupidatat velit aliqua. Cupidatat laborum excepteur laborum laboris sunt voluptate nulla est. Enim amet ea pariatur incididunt incididunt qui non id ex.</p>
                         </div>
                     </div>
                 </div>
