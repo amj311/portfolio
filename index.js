@@ -27,9 +27,9 @@ const app = new Vue({
             }, 50);
 
             setTimeout(()=>{
-                let wavesEl = document.querySelector('.wave-section')
+                let bubbleEls = document.querySelectorAll('.bubble-particle-field')
                 // const wavesEl = this.$ref.waves.el;
-                new MouseBubbleGenerator(wavesEl).activate();
+                Array.from(bubbleEls).forEach(e=>new MouseBubbleGenerator(e).activate());
             }, 100)
 
         }

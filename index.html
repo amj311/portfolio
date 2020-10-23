@@ -23,7 +23,17 @@
                 <div id="logoBubble" class="nav-bubble" v-html="portfolioData.brandSvg"></div>
             </div>
     
-            <section ref="waves" class="wave-section primary">
+            <section id="hero">
+                <div class="content">
+                    <div class="body">
+                        <div class="bubble-box bubble-particle-field" style="width: 10rem;">
+                            <img src="headshot.jpg" alt="headshot" style="width:100%" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section ref="waves" class="wave-section primary bubble-particle-field">
                 <div class="wave-wrapper" v-html="waveHtml"></div>
                 <div class="content">
                     <div class="max-width body"><h1>👋 Hello!</h1></div>
