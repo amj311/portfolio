@@ -10,6 +10,20 @@ body {
     margin: 0;
 }
 
+#navWrapper {
+    position: fixed;
+    padding: .5rem;
+}
+#logoBubble {
+    background: #fff;
+    width: 2rem;
+}
+#logoBubble .logoSvg {
+    width: 100%;
+    height: auto;
+    fill: var(--primary);
+}
+
 .wave-wrapper svg {
     width: 100%;
     height: var(--wave-height);

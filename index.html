@@ -15,10 +15,20 @@
 
 <body>
     <div id="app">
-        <section class="wave-section primary">
-            <div class="wave-wrapper" v-html="waveHtml"></div>
-            <div class="max-width section-body"><h1>👋 Hello!</h1></div>
-        </section>
+        <div v-if="dataIsLoading">
+            Loading...
+        </div>
+        <div v-else style="display: none;" :style="{display: dataIsLoading ? 'none' : 'block !important'}">
+            <div id="navWrapper">
+                <div id="logoBubble" class="nav-bubble" v-html="portfolioData.brandSvg"></div>
+            </div>
+    
+            <section class="wave-section primary">
+                <div class="wave-wrapper" v-html="waveHtml"></div>
+                <div class="max-width section-body"><h1>👋 Hello!</h1></div>
+            </section>
+    
+        </div>
     </div>
 
     <!-- Optional JavaScript -->
