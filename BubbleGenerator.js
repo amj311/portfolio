@@ -44,9 +44,17 @@ class MouseParticleGenerator {
     }
 
     updateMousePos(e) {
+        const {x,y} = this.getTargetOffset(e);
         if (this.isActive) {
-            this.mouseOffsetX = e.x;
-            this.mouseOffsetY = e.y;
+            this.mouseOffsetX = x;
+            this.mouseOffsetY = y;
+        }
+    }
+
+    getTargetOffset(e) {
+        return {
+            x: e.pageX-this.targetEl.getBoundingClientRect().left,
+            y: e.pageY-this.targetEl.getBoundingClientRect().top
         }
     }
 

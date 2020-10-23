@@ -11,8 +11,9 @@ body {
 }
 
 #navWrapper {
-    position: fixed;
+    /* position: fixed; */
     padding: .5rem;
+    z-index: 50;
 }
 #logoBubble {
     background: #fff;
@@ -44,19 +45,19 @@ section.wave-section .wave-wrapper path {
     100% { transform: translate(-100%, 0%) rotate(0deg) }
 }
 
-section.wave-section .section-body {
+section.wave-section .content {
     background-color: var(--water);
     background-image: linear-gradient(transparent 33%, rgba(0, 52, 83, 0.26) 80%);
-    color: var(--text-on-water)
+    color: var(--text-on-water);
 }
 
-.section-body {
+section .content {
     padding: 2em;
 }
 
-.section-content {
-
+section .body {
 }
+
 
 
 .particle-bubble:first-child {
