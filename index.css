@@ -27,6 +27,7 @@ body {
 .wave-wrapper svg {
     width: 100%;
     height: var(--wave-height);
+    margin-bottom: -1px;
 }
 .wave-wrapper path {
     animation: wave 20s cubic-bezier(0.5, 0.5, 0.5, .5) infinite;
@@ -55,4 +56,18 @@ section.wave-section .section-body {
 
 .section-content {
 
+}
+
+
+.particle-bubble:first-child {
+    transform: translate(0%,0%) scale(1);
+    opacity: 1;
+    animation: bubble-float 2000ms linear;
+}
+@keyframes bubble-float {
+    0% {transform: translate(0%,0%) scale(1); opacity: 1; }
+    25% {transform: translate(-50%,-100%) scale(.75); opacity: .75; }
+    50% {transform: translate(0%,-200%) scale(.50); opacity: .50; }
+    75% {transform: translate(-100%,-300%) scale(.25); opacity: .25; }
+    100% {transform: translate(0%,-400%) scale(0); opacity: .0; }
 }

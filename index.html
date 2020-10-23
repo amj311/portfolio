@@ -23,7 +23,7 @@
                 <div id="logoBubble" class="nav-bubble" v-html="portfolioData.brandSvg"></div>
             </div>
     
-            <section class="wave-section primary">
+            <section ref="waves" class="wave-section primary">
                 <div class="wave-wrapper" v-html="waveHtml"></div>
                 <div class="max-width section-body"><h1>👋 Hello!</h1></div>
             </section>
@@ -48,6 +48,7 @@
     <!-- Vue Prod -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
 
+    <script src="BubbleGenerator.js"></script>
     <script src="index.js"></script>
 
 </body>
