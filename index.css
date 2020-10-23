@@ -1,0 +1,37 @@
+:root {
+    --primary: rgb(0,200,255);
+    --text-on-primary: white;
+    --wave-height: 4rem;
+}
+
+body {
+    margin: 0;
+}
+
+.wave-wrapper svg {
+    width: 100%;
+    height: var(--wave-height);
+}
+.wave-wrapper path {
+    animation: wave 20s cubic-bezier(0.5, 0.5, 0.5, .5) infinite;
+    transform: translate(-100%, 0) rotate(0deg);
+}
+section.wave-section.primary .wave-wrapper path {
+    fill: var(--primary)
+}
+
+@keyframes wave {
+    0% { transform: translate(0%, 0%) rotate(0deg) }
+    25% { transform: translate(-25%, 5%) rotate(1deg) }
+    75% { transform: translate(-75%, 70%) rotate(-2deg) }
+    100% { transform: translate(-100%, 0%) rotate(0deg) }
+}
+
+section.primary .section-body {
+    background-color: var(--primary);
+    color: var(--text-on-primary)
+}
+
+.section-body {
+    padding: 2em;
+}
