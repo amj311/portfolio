@@ -53,8 +53,8 @@ class MouseParticleGenerator {
 
     getTargetOffset(e) {
         return {
-            x: e.pageX-this.targetEl.getBoundingClientRect().left,
-            y: e.pageY-this.targetEl.getBoundingClientRect().top
+            x: e.clientX-this.targetEl.getBoundingClientRect().left,
+            y: e.clientY-this.targetEl.getBoundingClientRect().top
         }
     }
 
