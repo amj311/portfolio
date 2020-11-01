@@ -1,14 +1,14 @@
 :root {
     --primary: rgb(0,200,255);
+    --text-on-primary: white;
     --water: var(--primary);
-    --sand: "sandy";
-    --text-on-water: white;
+    --text-on-water: var(--text-on-primary);
     --wave-height: 4rem;
     --max-content-width: 60rem;
 }
 
 * {
-    outline: 1px dotted #555;
+    outline: 1px dotted #888;
 }
 *:hover {
     outline: 2px dotted skyblue;
@@ -26,11 +26,14 @@ body {
 .text-primary {
     color: var(--primary) !important;
 }
+.bg-primary {
+    background-color: var(--primary) !important;
+    color: var(--text-on-primary)
+}
 
 .bubble-box {
     background-color: var(--water);
     background-image: linear-gradient(transparent 33%, rgba(0, 52, 83, 0.26) 80%);
-    color: transparent;
     width: fit-content;
     overflow: hidden;
     border-radius: 20% 80% 70% 30% / 30% 56% 44% 70%;
@@ -95,10 +98,24 @@ section#hero .body {
 section#hero #summary {
     margin-left: 2rem;
 }
-section#hero #headshot img {
+/* section#hero #headshot img {
     opacity: 0;
     pointer-events: none;
     user-select: none;;
+} */
+#headshot .bubble-box {
+    height: 12rem;
+    width: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#hero #headshot #code-symbol {
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: .8;
+    user-select: none;
+    padding-bottom: 1rem;
 }
 
 
@@ -112,6 +129,9 @@ section.wave-section {
     width: 100%;
     height: var(--wave-height);
     margin-bottom: -1px;
+    transform-origin: bottom;
+    transform: scaleY(1);
+    animation: wave-shrink 17s cubic-bezier(0.5, 0.5, 0.5, .5) infinite alternate;
 }
 .wave-wrapper path {
     animation: wave 20s cubic-bezier(0.5, 0.5, 0.5, .5) infinite;
@@ -126,6 +146,10 @@ section.wave-section .wave-wrapper path {
     25% { transform: translate(-25%, 5%) rotate(1deg) }
     75% { transform: translate(-75%, 70%) rotate(-2deg) }
     100% { transform: translate(-100%, 0%) rotate(0deg) }
+}
+@keyframes wave-shrink {
+    0% { transform: scaleY(1) }
+    100% { transform: scaleY(.3) }
 }
 
 section.wave-section .content {
