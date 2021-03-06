@@ -1,0 +1,96 @@
+:root {
+    --print-margin: .7in;
+    --tint: #5ba7d1;
+    --shade: #335384;
+    --light: #e0e0ef;
+    --grey: #888;
+    --dark: #222;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #edf0f2;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+#page-wrapper {
+    margin: 20px auto;
+    box-shadow: 1px 1px 6px #0005;
+    width: min-content;
+    height: min-content;
+}
+
+#page {
+    width: 8.5in;
+    height: 11in;
+    background: #fff;
+    position: relative;
+}
+
+div.page-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+div#contentLayer {
+    display: flex;
+}
+
+div#contentLayer > div {
+    flex-grow: 1;
+    padding: var(--print-margin);
+}
+
+div#sideBar {
+    background: var(--shade);
+    color: white;
+    max-width: 38%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+div#sideBarHeader h1 {
+    font-weight: bold;
+    margin: 0 0 .5em 0;
+    font-size: 30pt;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+}
+
+div#sideBarContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+div.side-bar-section {
+    margin-bottom: 30pt;
+}
+
+
+div.side-bar-section > h2 {
+    font-weight: bold;
+    margin: 0 0 .5em 0;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+}
+
+
+
+
+@media print {
+    #page-wrapper {
+        margin: 0;
+        box-shadow: none;
+    }
+}
