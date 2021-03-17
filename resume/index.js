@@ -182,7 +182,7 @@ const app = new Vue({
 
   watch: {
     resume(val) {
-      console.log(val)
+      document.title = val?.fileName || "Resume Builder"
     }
   },
 

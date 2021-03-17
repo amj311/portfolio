@@ -149,6 +149,7 @@ let school = new ExperienceGroup("Educational History", [
 ])
 
 const defaultResumeData = {
+  version: "0.1",
   fileName: "New Resume",
   showSummary: false,
   bio: {
