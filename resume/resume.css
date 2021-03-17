@@ -30,12 +30,13 @@ a {
     pointer-events: none;
 }
 
-[contenteditable="true"]:hover {
+.editable:hover {
     outline: 2px solid #00bbff;
     cursor: pointer;
 }
 
-[contenteditable="true"]:focus {
+.editable:focus {
+    border-radius: .15em;
     outline: none;
     box-shadow: 0 0 0 1px;
     cursor: text;
@@ -63,9 +64,12 @@ div#mainToolBar .toolbar-row {
     justify-content: flex-start;
 }
 
-div#fileName {
+div#fileName .editable {
     font-weight: bold;
     font-size: 1.5em;
+    border: 1px solid #bbb;
+    border-radius: .25em;
+    padding: 0 .25em;
 }
 
 .toolbar-row > div:not(:last-child) {

@@ -16,7 +16,7 @@ const saveQueueManager = new ResumeSaveQueueManager();
 
 
 Vue.component('editable', {
-  template: `<div contenteditable="true" v-once v-html="value" :value="value" @input="$emit('input', $event.target.innerHTML)"></div>`,
+  template: `<div class="editable" contenteditable="true" v-once v-html="value" :value="value" @input="$emit('input', $event.target.innerHTML)"></div>`,
   props: ['value'],
   watch: {
     value: function (newValue) {
