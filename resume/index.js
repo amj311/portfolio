@@ -59,6 +59,7 @@ Vue.component('listItemControls',{
     },
     remove() {
       this.$delete(this.list,this.idx);
+      initVueSave();
     }
   }
 })

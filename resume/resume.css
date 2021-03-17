@@ -113,6 +113,19 @@ div#fileName {
     z-index: 3;
 }
 
+.inline-toolbar-trigger-wrapper:hover {
+    border-left: 2px solid #0bf3;
+    margin-left: -2px;
+}
+
+.inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover {
+    border-left: 2px solid #0bf5;
+}
+
+.inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover {
+    border-left: 2px solid #0bf;
+}
+
 .inline-toolbar {
     background: #fff;
     color: initial;
