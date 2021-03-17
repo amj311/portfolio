@@ -118,6 +118,7 @@ Vue.component('editableList',{
   methods: {
     insertNew() {
       this.list.push(this.defaultNew);
+      initVueSave();
     }
   }
 })

@@ -196,11 +196,6 @@ div#fileName {
 
 
 
-ul.point-list-item-wrapper {
-    padding-inline-start: 20px;
-    margin: 0;
-}
-
 #page-wrapper {
     margin: 20px auto;
     box-shadow: 0px 1px 6px #0005;
@@ -293,8 +288,23 @@ div#sideBarContent .section-content li {
     margin-bottom: .4em;
 }
 
+
+
+
+ul.point-list-item-wrapper {
+    padding-inline-start: 20px;
+    margin: 0;
+    margin-left: .2em;
+}
+
+ul.point-list-item-wrapper {
+    padding-inline-start: 20px;
+    margin: 0;
+}
+
 .icon-list-item {
     display: flex;
+    margin-left: -.2em;
 }
 .icon-list-item i {
     max-width: 1.5em;
@@ -430,7 +440,7 @@ code pre {
 
 @media print {
     .ui-block, [ui] {
-        display: none;
+        display: none !important;
     }
 
     #page-wrapper {
@@ -440,5 +450,10 @@ code pre {
 
     #page * {
         outline: none !important;
+    }
+
+    .editable-list, .inline-toolbar-trigger-wrapper {
+        border: none !important;
+        margin: initial !important
     }
 }
