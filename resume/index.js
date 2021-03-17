@@ -1,5 +1,7 @@
 const iconClasses = {
   "email": "fa fa-envelope",
+  "phone": "fa fa-phone-alt",
+  "cell": "fa fa-mobile-alt",
   "website": "fa fa-desktop",
   "linkedin": "fab fa-linkedin",
   "github": "fab fa-github",
@@ -24,12 +26,41 @@ Vue.component('editable', {
         return;
       }
 
-      this.$el.innerHTML = newValue;
+      this.$el.innerHTML = DOMPurify.sanitize( newValue , {USE_PROFILES: {html: true}} );
     }
   }
 });
 
 
+Vue.component('pointListItemControls',{
+  template: `
+  <div class='toolbar-button-list'>
+    <a @click="toggleMenu('icon')"><i class="far fa-star"></i>
+      <div v-if="showMenu == 'icon'" class="toolbar-button-submenu inline-toolbar">
+        <a @click="setIcon(null)"><i class="fa fa-ban"></i></a>
+        <a v-for="iconCode in Object.keys(iconClasses)" @click="setIcon(iconCode)"><i :class="iconClass(iconCode)"></i></a>
+      </div>
+    </a>
+  </div>
+  `,
+  props: ['list','idx'],
+  data() { return {
+    iconClasses: iconClasses,
+    showMenu: null,
+  }},
+  computed: {
+  },
+  methods: {
+    iconClass(code) { return iconClass(code) },
+    toggleMenu(code) {
+      this.showMenu = this.showMenu == code? null : code;
+    },
+    setIcon(code) {
+      this.list[this.idx].icon = code;
+      initVueSave();
+    }
+  }
+})
 
 Vue.component('listItemControls',{
   template: `
@@ -71,9 +102,11 @@ Vue.component('editableList',{
     <div v-for="(item,i) in list">
       <div class="inline-toolbar-trigger-wrapper">
         <div class="inline-toolbar-target"><slot :item="item"></slot></div>
-        <div class="inline-toolbar-wrapper">
-          <div class="inline-toolbar">
+        <div ui class="inline-toolbar-wrapper">
+          <div class="inline-toolbar toolbar-row" >
+            <slot name="preControls" :list="list" :idx="i"></slot>
             <listItemControls :list="list" :idx="i" />
+            <slot name="postControls" :list="list" :idx="i"></slot>
           </div>
         </div>
       </div>
@@ -112,6 +145,7 @@ Vue.component('resumesection',{
             </li>
           </ul>
         </template>
+        <template v-slot:preControls="slotProps"><pointListItemControls :list="slotProps.list" :idx="slotProps.idx" /></template>
       </editableList>
       <sectionlist v-if="section.sections?.length > 0" :list="section.sections" class="sublist" />
     </div>
@@ -138,6 +172,7 @@ const app = new Vue({
     generatingImage: false,
     showPdfModal: false,
     showJsonModal: false,
+    showPrintModal: false,
     printGrayscale: false,
   },
 
@@ -178,13 +213,22 @@ const app = new Vue({
       })
     },
 
-    createNewResumeOnServer() {
+    createNewResumeOnServer(givenData) {
+      let resumeData;
+      if (!givenData) resumeData = defaultResumeData;
+      else {
+        resumeData = {...givenData}
+        resumeData = {...givenData}
+        resumeData.fileName = "Copy of " + resumeData.fileName;
+      }
+      delete resumeData._id;
+
       this.resume = {};
 
-      axios.post(this.apiUrl+"/resume/create", defaultResumeData)
+      axios.post(this.apiUrl+"/resume/create", resumeData)
       .then((res)=>{
         console.log(res.data.newId)
-        let newResume = {_id:res.data.newId, ...defaultResumeData};
+        let newResume = {_id:res.data.newId, ...resumeData};
         this.setCurrentResume(newResume);
         this.allResumes.push(newResume);
       })
@@ -215,13 +259,13 @@ const app = new Vue({
       axios.delete(this.apiUrl+"/resume/"+id)
       .then((res)=>{
         console.log("Deleted!")
+        if (id == this.resume?._id) this.resume = null;
         this.allResumes = this.allResumes.filter(r => r._id != id);
         if (onSuccess) onSuccess(res);
       })
       .catch( (err)=>{
         console.log(err);
         alert("Could not delete!");
-        if (id == this.resume._id) this.resume = null;
         if (onFailure) onFailure(err);
       })
     },

@@ -41,15 +41,19 @@ a {
     cursor: text;
 }
 
-div#toolBar {
+div#mainToolBar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     background: #fff;
     box-shadow: 0 0 5px #0005;
     padding: 1px;
+}
+
+div#mainToolBar .toolbar-row {
+    margin: .5rem;
 }
 
 .toolbar-row {
@@ -57,7 +61,6 @@ div#toolBar {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin: .5rem;
 }
 
 div#fileName {
@@ -65,8 +68,12 @@ div#fileName {
     font-size: 1.5em;
 }
 
-.toolbar-row > div {
+.toolbar-row > div:not(:last-child) {
     margin: 0 .5rem 0 0;
+}
+
+.toolbar-button-list:not(:last-child) {
+    border-right: 1px solid #0002;
 }
 
 .toolbar-button-list {
@@ -82,7 +89,7 @@ div#fileName {
 }
 
 .toolbar-button-list a:hover {
-    background-color: #e8e8e8;
+    background-color: #0001;
 }
 
 
@@ -91,7 +98,7 @@ div#fileName {
 }
 
 
-#toolBarSpacer {
+#mainToolBarSpacer {
     height: 6rem;
 }
 
@@ -106,11 +113,11 @@ div#fileName {
     top: 0;
     left: 0;
     transform: translateY(-99%);
-    z-index: 2;
+    z-index: 1;
     padding-bottom: .25em;
 }
 .inline-toolbar-wrapper:hover {
-    z-index: 3;
+    z-index: 2;
 }
 
 .inline-toolbar-trigger-wrapper:hover {
@@ -119,7 +126,7 @@ div#fileName {
 }
 
 .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover {
-    border-left: 2px solid #0bf5;
+    border-left: 2px solid #0bf4;
 }
 
 .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover {
@@ -137,6 +144,16 @@ div#fileName {
 .inline-toolbar-trigger-wrapper:hover > .inline-toolbar-wrapper {
     display: block;
 }
+
+.toolbar-button-submenu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translatey(calc(100% - 4px));
+}
+
+
+
 
 
 ul.point-list-item-wrapper {
@@ -314,7 +331,7 @@ div.modal-wrapper {
     left: 0;
     background: #0002;
     display: flex;
-    z-index: 2;
+    z-index: 10;
 }
 
 #pdfImg {
@@ -344,6 +361,17 @@ div.modal-wrapper {
     cursor: pointer;
 }
 
+.modal-body {
+    max-height: 80vh;
+    overflow: auto;
+}
+
+code pre {
+    tab-size: 2;
+    background: #e8e8e8;
+    padding: 1em;
+    overflow-x: auto;
+}
 
 .open-list-item {
     display: flex;
@@ -353,13 +381,15 @@ div.modal-wrapper {
 }
 
 .open-list-item:hover {
-    background-color: #e8e8e8;
+    background-color: #0001;
 }
 
-.open-list-item-details {}
+.open-list-item-details {
+    flex-grow: 1;
+}
 
 @media print {
-    .ui-block {
+    .ui-block, [ui] {
         display: none;
     }
 

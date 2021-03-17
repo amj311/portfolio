@@ -13,18 +13,19 @@
 
 <body>
   <div id="app" style="display: none;" :style="{display: 'block !important'}">
-    <div class="ui-block" id="toolBar">
+    <div class="ui-block" id="mainToolBar">
       <div class="toolbar-row" v-if="resume">
         <div id="fileName"><editable v-model="resume.fileName"></editable></div>
-        <div id="saveStatus" v-if="saveStatus">{{saveStatus}}</div>
+        <div id="saveStatus" v-if="saveStatus"><em>{{saveStatus}}</em></div>
       </div>
 
       <div class="toolbar-row">
         <div id="mainActions" class="toolbar-button-list">
           <a @click="createNewResumeOnServer">New</a>
           <a @click="startOpenSequence">Open</a>
+          <a @click="createNewResumeOnServer(resume)">Duplicate</a>
           <a @click="saveResumeToServer">Save</a>
-          <a @click="browserPrint">Print</a>
+          <a @click="showPrintModal = true">Export</a>
           <a @click="showJsonModal = true">{json}</a>
         </div>
       </div>
@@ -34,7 +35,7 @@
 
     </div>
     <div v-else>
-      <div class="ui-block" id="toolBarSpacer"></div>
+      <div class="ui-block" id="mainToolBarSpacer"></div>
 
       <div id="page-wrapper">
         <div id="page">
@@ -82,15 +83,35 @@
         </div>
       </div>
   
+      <div id="printModal" v-if="showPrintModal" class="modal-wrapper">
+        <div class="modal-container">
+          <div class="closer" @click="showPrintModal = false;">&times;</div>
+          <h1>Export with Browser</h1>
+          
+          <div class="modal-body">
+            <img src="./images/print_instructions.jpg" id="printImg" />
+          </div>
+
+          <button @click="browserPrint(); showPrintModal = false;">Export</button>
+
+        </div>
+      </div>
+  
       <div id="openResModal" v-if="showOpenModal" class="modal-wrapper">
         <div class="modal-container">
           <div class="closer" @click="showOpenModal = false;">&times;</div>
-          
           <h1>Open A Resume</h1>
-          <div v-for="resume in allResumes" class="open-list-item">
-            <div @click="setCurrentResume(resume); showOpenModal = false" class="open-list-item-details">
-              <a href="#">{{resume.fileName || 'Unnamed Resume'}}</div></a>
-            <div @click="sendDeleteRequest(resume._id)"><a><i class="fa fa-trash"></i></a></div>
+
+          <div class="modal-body">
+            <div v-for="resume in allResumes" class="open-list-item">
+              <div @click="setCurrentResume(resume); showOpenModal = false" class="open-list-item-details">
+                <a href="#">{{resume.fileName || 'Unnamed Resume'}}</a>
+              </div>
+              <div class="toolbar-button-list">
+                <div @click="createNewResumeOnServer(resume)"><a><i class="far fa-clone"></i></a></div>
+                <div @click="sendDeleteRequest(resume._id)"><a><i class="fa fa-trash"></i></a></div>  
+              </div>
+            </div>
           </div>
 
           <a style="font-weight: bold; padding: .5em; display:block " @click="createNewResumeOnServer(); showOpenModal = false;">+ New Resume</a>
@@ -101,9 +122,10 @@
       <div id="jsonModal" v-if="showJsonModal" class="modal-wrapper">
         <div class="modal-container">
           <div class="closer" @click="showJsonModal = false;">&times;</div>
-          
           <h1>JSON For Current Resume</h1>
-          <code>{{JSON.stringify(resume)}}</code>
+          <div class="modal-body">
+            <code><pre>{{JSON.stringify(resume, null, '\t')}}</pre></code>  
+          </div>
         </div>
       </div>
 
@@ -119,6 +141,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
   <script type="text/javascript" src="//unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify@2.2.7/dist/purify.min.js"></script>
 
   <script src="SaveQueue.js"></script>
   <script src="resumeData.js"></script>
