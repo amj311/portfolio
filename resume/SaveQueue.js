@@ -20,7 +20,7 @@ class ResumeSaveQueue {
 
   sendNextRequest() {
     if (this.processing == true) {
-      console.error("Attempted to begin new request while still processing.");
+      console.info("Attempted to begin new request while still processing.");
       return;
     }
     if (this.queue.length <= 0) return;
@@ -76,7 +76,6 @@ class ResumeSaveQueueManager {
   }
 
   getNewQueue(resumeId) {
-    console.log("Creating new savequeue with id: "+resumeId)
     this.cleanQueues();
 
     let newQueue = new ResumeSaveQueue(resumeId);
