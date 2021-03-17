@@ -274,37 +274,6 @@ const app = new Vue({
       window.print();
     },
 
-    generatePdfImg() {
-      this.generatingImage = true;
-      const tag = document.getElementById('page');
-      const p = html2canvas(tag, {
-        scale: 2,
-        removeContainer: true,
-      });
-      let ctx = this;
-      p.then(function (canvas) {
-        ctx.pdfImg = canvas.toDataURL('image/png');
-        ctx.generatingImage = false;
-      })
-    },
-    peekPdf() {
-      this.generatePdfImg();
-      this.showPdfModal = true;
-    },
-    savePdf() {
-      this.generatePdfImg();
-
-      var doc = new jsPDF({
-        unit: 'px',
-        format: 'letter',
-      });
-
-      var width = doc.internal.pageSize.getWidth();
-      var height = doc.internal.pageSize.getHeight();
-      doc.addImage(img, 'JPEG', -10, 0, width, height);
-
-      doc.save('resume.pdf');
-    },
   },
 
   computed: {
