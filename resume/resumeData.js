@@ -1,3 +1,10 @@
+class Point {
+  constructor(content,icon=null) {
+    this.content = content;
+    this.icon = icon;
+  }
+}
+
 class Section {
   constructor(props) {
     this.title = props.title;
@@ -8,12 +15,16 @@ class Section {
   }
 }
 
-class Point {
-  constructor(content,icon=null) {
-    this.content = content;
-    this.icon = icon;
-  }
-}
+defaultNewPoint = new Point("Qui incididunt consectetur in labore aliqua sint.");
+
+defaultNewSection = new Section({
+  title: "Section Title",
+  subtitle: "Section Subtitle",
+  summary: "This is a seciton summary. Laboris dolor dolore excepteur culpa. Minim nostrud ipsum consectetur nulla et dolor eiusmod ad anim duis nisi laboris. Veniam voluptate officia consectetur sint id id culpa magna.",
+  points: [{...defaultNewPoint}]
+})
+defaultNewSection.sections = [{...defaultNewSection}]
+
 
 class ContactOption extends Point {
   constructor(type, value) { super(value, type) }

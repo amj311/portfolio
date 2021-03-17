@@ -120,17 +120,59 @@ div#fileName {
     z-index: 2;
 }
 
+.editable-list:hover {
+    border-left: 2px solid #0bf2;
+    margin-left: -2px;
+}
+
 .inline-toolbar-trigger-wrapper:hover {
-    border-left: 2px solid #0bf3;
+    border-left: 2px solid #0bf2;
     margin-left: -2px;
 }
 
 .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover {
-    border-left: 2px solid #0bf4;
+    border-left: 2px solid #0bf2;
+    margin-left: -2px;
 }
 
 .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover .inline-toolbar-trigger-wrapper:hover {
     border-left: 2px solid #0bf;
+}
+
+
+
+
+.editable-list.can-insert:hover {
+    position: relative;
+    padding-bottom: 1px;
+    margin-bottom: -1px;
+}
+
+.insert-item-button {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(calc(-50% - 1px), 25%);
+    background: #0bf;
+    color: #fff;
+    font-size: 0.5rem;
+    line-height: 1em;
+    width: 1em;
+    align-items: center;
+    justify-content: center;
+    padding: .5em;
+    border-radius: 50%;
+    opacity: .8;
+}
+.insert-item-button:hover {
+    opacity: 1;
+    font-size: .6rem;
+    z-index: 2;
+}
+.editable-list.can-insert:hover > .insert-item-button {
+    display: flex;
 }
 
 .inline-toolbar {
@@ -151,8 +193,6 @@ div#fileName {
     left: 0;
     transform: translatey(calc(100% - 4px));
 }
-
-
 
 
 

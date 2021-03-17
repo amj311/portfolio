@@ -98,7 +98,7 @@ Vue.component('listItemControls',{
 
 Vue.component('editableList',{
   template: `
-  <div class='editable-list'>
+  <div class='editable-list' :class="{'can-insert': defaultNew}">
     <div v-for="(item,i) in list">
       <div class="inline-toolbar-trigger-wrapper">
         <div class="inline-toolbar-target"><slot :item="item"></slot></div>
@@ -111,22 +111,31 @@ Vue.component('editableList',{
         </div>
       </div>
     </div>
+    <div v-if="defaultNew" ui class="insert-item-button" @click="insertNew"><i class="fa fa-plus"></i></div>
   </div>
   `,
-  props: ['list']
+  props: ['list', 'defaultNew'],
+  methods: {
+    insertNew() {
+      this.list.push(this.defaultNew);
+    }
+  }
 })
 
 
 Vue.component('sectionlist',{
   template: `
   <div class='section-list'>
-    <editableList :list="list">
+    <editableList :list="list" :defaultNew="newSection">
       <template v-slot:default="slotProps">
         <resumesection :section='slotProps.item' />
       </template>
     </editableList>
   </div>
   `,
+  data() { return {
+    newSection: defaultNewSection,
+  }},
   props: ['list']
 })
 
@@ -137,7 +146,7 @@ Vue.component('resumesection',{
     <h3 v-if="section.subtitle"><editable v-model="section.subtitle" /></h3>
     <div class="section-content">
       <div v-if="section.summary" class="section-summary"><editable v-model="section.summary" /></div>
-      <editableList v-if="section.points?.length > 0" :list="section.points">
+      <editableList v-if="section.points?.length > 0" :list="section.points" :defaultNew="newSection">
         <template v-slot:default="slotProps" class="point-list">
           <ul class="point-list-item-wrapper">
             <li :class="{'icon-list-item': slotProps.item.icon}">
@@ -145,13 +154,18 @@ Vue.component('resumesection',{
             </li>
           </ul>
         </template>
-        <template v-slot:preControls="slotProps"><pointListItemControls :list="slotProps.list" :idx="slotProps.idx" /></template>
+        <template v-slot:preControls="slotProps">
+          <pointListItemControls :list="slotProps.list" :idx="slotProps.idx" />
+        </template>
       </editableList>
       <sectionlist v-if="section.sections?.length > 0" :list="section.sections" class="sublist" />
     </div>
   </div>
   `,
   props: ['section'],
+  data() { return {
+    newSection: defaultNewPoint,
+  }},
   methods: {
     iconClass(code) { return iconClass(code) }
   }
