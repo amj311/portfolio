@@ -197,7 +197,7 @@ const app = new Vue({
 
   watch: {
     resume(val) {
-      document.title = val?.fileName || "Resume Builder"
+      document.title = val?.fileName? val.bio.name+" "+val.fileName : "Resume Builder"
     }
   },
 
