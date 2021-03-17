@@ -1,48 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur Judd</title>
 
-    <link rel="stylesheet" href="resume.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="resume.css">
 </head>
+
 <body>
-    <div id="page-wrapper">
-        <div id="page">
-            <div id="bgLayer" class="page-layer"></div>
-            <div id="contentLayer" class="page-layer">
-                <div id="sideBar">
-                    <div id="sideBarHeader">
-                        <h1>ARTHUR JUDD</h1>
-                    </div>
-                    <hr/>
-                    <div id="sideBarContent">
-                        <div class="side-bar-section" id="contact">
-                            <h2>Contact Me</h2>
-                        </div>
-                        <div class="side-bar-section" id="skills">
-                            <h2>My Skills</h2>
-                        </div>
-                        <div class="side-bar-section" id="tech">
-                            <h2>Tech I Use</h2>
-                        </div>
-                        <div class="side-bar-section" id="awards">
-                            <h2>Awards Received</h2>
-                        </div>    
-                    </div>
-                </div>
-                <div id="mainContent">content</div>
-            </div>
+  <div id="app" style="display: none;" :style="{display: 'block !important'}">
+    <div class="ui-block" id="toolBar">
+      <div class="toolbar-row" v-if="resume">
+        <div id="fileName"><editable v-model="resume.fileName"></editable></div>
+        <div id="saveStatus" v-if="saveStatus">{{saveStatus}}</div>
+      </div>
+
+      <div class="toolbar-row">
+        <div id="mainActions" class="toolbar-button-list">
+          <a @click="createNewResumeOnServer">New</a>
+          <a @click="startOpenSequence">Open</a>
+          <a @click="saveResumeToServer">Save</a>
+          <a @click="browserPrint">Print</a>
+          <a @click="showJsonModal = true">{json}</a>
         </div>
+      </div>
     </div>
 
-        <!-- Vue Dev -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-        <!-- Vue Prod -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
-    
-        <script src="resume.js"></script>
+    <div v-if="!resume">
+
+    </div>
+    <div v-else>
+      <div class="ui-block" id="toolBarSpacer"></div>
+
+      <div id="page-wrapper">
+        <div id="page">
+          <div id="bgLayer" class="page-layer"></div>
+          <div id="contentLayer" class="page-layer">
+            <div id="sideBar">
+              <div id="sideBarHeader">
+                <!-- <h1>{{resume.name}}</h1> -->
+                <div class="logo" :style="{backgroundImage: `url(${resume.logo})`}" ></div>
+              </div>
+              <div id="sideBarContent">
+                <sectionlist :path="['sideSections']" :list="resume.sideSections" />
+              </div>
+            </div>
+  
+            <div id="mainPanel">
+              <div id="letterhead">
+                <h1>{{resume?.bio?.name}}</h1>
+                <h2>{{resume?.bio?.subtitle}}</h2>
+                <hr />
+              </div>
+  
+              <div id="mainContent">
+                <div v-if="resume.showBio" class="main-content-section">
+                  <h2>Personal Profile</h2>
+                  <div>{{resume?.bio}}</div>
+                </div>
+  
+                <sectionlist :path="['mainSections']" :list="resume.mainSections" />
+
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-block">
+      <div id="pdfModal" v-if="showPdfModal" class="modal-wrapper">
+        <div class="modal-container">
+          <div class="closer" @click="showPdfModal = false;">&times;</div>
+          <img v-if="pdfImg" :src="pdfImg" id="pdfImg" />
+          <button @click="savePdf">Export</button>
+        </div>
+      </div>
+  
+      <div id="openResModal" v-if="showOpenModal" class="modal-wrapper">
+        <div class="modal-container">
+          <div class="closer" @click="showOpenModal = false;">&times;</div>
+          
+          <h1>Open A Resume</h1>
+          <div v-for="resume in allResumes" class="open-list-item">
+            <div @click="setCurrentResume(resume); showOpenModal = false" class="open-list-item-details">
+              <a href="#">{{resume.fileName || 'Unnamed Resume'}}</div></a>
+            <div @click="sendDeleteRequest(resume._id)"><a><i class="fa fa-trash"></i></a></div>
+          </div>
+
+          <a style="font-weight: bold; padding: .5em; display:block " @click="createNewResumeOnServer(); showOpenModal = false;">+ New Resume</a>
+
+        </div>
+      </div>
+  
+      <div id="jsonModal" v-if="showJsonModal" class="modal-wrapper">
+        <div class="modal-container">
+          <div class="closer" @click="showJsonModal = false;">&times;</div>
+          
+          <h1>JSON For Current Resume</h1>
+          <code>{{JSON.stringify(resume)}}</code>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Vue Dev -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <!-- Vue Prod -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.20.0-0/axios.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script type="text/javascript" src="//unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+
+  <script src="SaveQueue.js"></script>
+  <script src="resumeData.js"></script>
+  <script src="index.js"></script>
 </body>
+
 </html>

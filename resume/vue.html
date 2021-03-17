@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <style>
+      .folder, .file{
+        position:relative;
+        padding: 3px 12px;
+        cursor: pointer;
+      }
+      .folder:before{
+        content:'';
+        display:block;
+        border: 5px solid black;
+        border-color: transparent transparent transparent #000;
+        position:absolute;
+        left:0;
+        top:0%;
+        width:0;
+        transition: all .2s ease;
+        transform: translateY(75%);
+      }
+      .folder.active:before{
+        border-color:#000 transparent transparent transparent;
+      }
+      .folder > .tree{
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='app'>
+      <tree></tree>
+    </div>
+    <script src="vue.js" ></script>
+  </body>
+</html>
