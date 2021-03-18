@@ -53,8 +53,8 @@
   
             <div id="mainPanel">
               <div id="letterhead">
-                <h1>{{resume?.bio?.name}}</h1>
-                <h2>{{resume?.bio?.subtitle}}</h2>
+                <h1><editable v-model="resume.bio.name" /></h1>
+                <h2><editable v-model="resume.bio.subtitle" /></h2>
                 <hr />
               </div>
   
