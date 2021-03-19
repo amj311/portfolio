@@ -117,7 +117,7 @@ Vue.component('editableList',{
   props: ['list', 'defaultNew'],
   methods: {
     insertNew() {
-      this.list.push(this.defaultNew);
+      this.list.push({...this.defaultNew});
       initVueSave();
     }
   }
