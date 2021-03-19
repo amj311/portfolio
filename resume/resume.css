@@ -468,6 +468,8 @@ code pre {
     #page-wrapper {
         margin: 0;
         box-shadow: none;
+        zoom: 1 !important;
+        padding: 0;
     }
 
     #page * {
