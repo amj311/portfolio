@@ -13,7 +13,6 @@
 body {
     margin: 0;
     font-size: 11pt;
-    /* line-height: 1.5; */
     font-family: 'Assistant', sans-serif;
     background: #edf0f2;
     text-rendering: optimizeLegibility;
@@ -31,7 +30,7 @@ a {
 }
 
 .editable {
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .editable:hover {
@@ -41,7 +40,7 @@ a {
 
 .editable:focus {
     outline: none;
-    box-shadow: 0 0 0 1px;
+    box-shadow: 0 0 0 1px #888;
     cursor: text;
 }
 
@@ -70,7 +69,7 @@ div#mainToolBar .toolbar-row {
 div#fileName .editable {
     font-weight: bold;
     font-size: 1.5em;
-    border: 1px solid #bbb;
+    box-shadow: 0 0 0 1px #bbb;
     padding: 0 .25em;
 }
 
@@ -87,20 +86,34 @@ div#fileName .editable {
 }
 
 
-.toolbar-button-list a {
+.toolbar-button-list > *, .toolbar-button-list a {
     display: inline-block;
     padding: .2em .4em;
-    cursor: pointer;
     border-radius: .25em;
 }
 
 .toolbar-button-list a:hover {
     background-color: #0001;
+    cursor: pointer;
 }
 
 
 .toolbar-button-list a i[class*="fa"] {
     transform: scale(.8);
+}
+
+.toolbar-button-group {
+    box-shadow: 0 0 0 1px #bbb;
+    border-radius: 3px;
+}
+
+.toolbar-button-group > * {
+    border-right: 1px solid #bbb !important;
+    border-radius: 0 !important;
+}
+
+.toolbar-button-group > *:last-child {
+    border: none !important;
 }
 
 
@@ -200,16 +213,22 @@ div#fileName .editable {
 
 
 #page-wrapper {
-    margin: 20px auto;
-    box-shadow: 0px 1px 6px #0005;
+    margin: 10px auto;
     width: min-content;
     height: min-content;
+    padding: 1rem;
+    zoom: var(--pageZoom);
+}
+
+#page-wrapper [ui] {
+    zoom: calc(1 / var(--pageZoom));
 }
 
 #page {
     width: 8.5in;
     height: 11in;
     background: #fff;
+    box-shadow: 0px 1px 6px #0005;
     position: relative;
 }
 
@@ -442,7 +461,7 @@ code pre {
 }
 
 @media print {
-    .ui-block, [ui] {
+    [ui] {
         display: none !important;
     }
 

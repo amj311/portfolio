@@ -189,15 +189,32 @@ const app = new Vue({
     showJsonModal: false,
     showPrintModal: false,
     printGrayscale: false,
+
+    pageZoom: 1,
+    minZoom: .5,
+    maxZoom: 2,
   },
 
   beforeMount() {
+      window.addEventListener('keydown', function(event) {
+        if (event.ctrlKey || event.metaKey) {
+            switch (String.fromCharCode(event.which).toLowerCase()) {
+            case 's':
+                event.preventDefault();
+                initVueSave();
+                break;
+            }
+        }
+    });
     setTimeout(this.startOpenSequence,2000);
   },
 
   watch: {
     resume(val) {
       document.title = val?.fileName? val.bio.name+" "+val.fileName : "Resume Builder"
+    },
+    pageZoom(val) {
+      document.querySelector(':root').style.setProperty("--pageZoom", val);
     }
   },
 
@@ -254,6 +271,7 @@ const app = new Vue({
     },
 
     saveResumeToServer() {
+      if (!this.resume) return;
       this.currentSaveQueue.add(new ResumeSaveQueueRequest(this.sendSaveRequest, this.resume))
     },
 
@@ -288,6 +306,14 @@ const app = new Vue({
     browserPrint(){
       window.print();
     },
+
+    decZoom() {
+      this.pageZoom = Math.max(this.pageZoom-.1,this.minZoom);
+    },
+
+    incZoom() {
+      this.pageZoom = Math.min(this.pageZoom+.1,this.maxZoom);
+    }
 
   },
 

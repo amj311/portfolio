@@ -13,7 +13,7 @@
 
 <body>
   <div id="app" style="display: none;" :style="{display: 'block !important'}">
-    <div class="ui-block" id="mainToolBar">
+    <div ui id="mainToolBar">
       <div class="toolbar-row" v-if="resume">
         <div id="fileName"><editable v-model="resume.fileName"></editable></div>
         <div id="saveStatus" v-if="saveStatus"><em>{{saveStatus}}</em></div>
@@ -28,6 +28,11 @@
           <a @click="showPrintModal = true">Export</a>
           <a @click="showJsonModal = true">{json}</a>
         </div>
+        <div id="zoom" class="toolbar-button-list toolbar-button-group">
+          <a @click="decZoom" :disabled="pageZoom <= minZoom"><i class="fa fa-search-minus"></i></a>
+          <span>{{Math.round(pageZoom*100)}}%</span>
+          <a @click="incZoom" :disabled="pageZoom >= maxZoom"><i class="fa fa-search-plus"></i></a>
+        </div>
       </div>
     </div>
 
@@ -35,7 +40,7 @@
 
     </div>
     <div v-else>
-      <div class="ui-block" id="mainToolBarSpacer"></div>
+      <div ui id="mainToolBarSpacer"></div>
 
       <div id="page-wrapper">
         <div id="page">
@@ -74,7 +79,7 @@
       </div>
     </div>
 
-    <div class="ui-block">
+    <div ui>
       <div id="pdfModal" v-if="showPdfModal" class="modal-wrapper">
         <div class="modal-container">
           <div class="closer" @click="showPdfModal = false;">&times;</div>
