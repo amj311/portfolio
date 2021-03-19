@@ -113,8 +113,8 @@
                 <a href="#">{{resume.fileName || 'Unnamed Resume'}}</a>
               </div>
               <div class="toolbar-button-list">
-                <div @click="createNewResumeOnServer(resume)"><a><i class="far fa-clone"></i></a></div>
-                <div @click="sendDeleteRequest(resume._id)"><a><i class="fa fa-trash"></i></a></div>  
+                <a @click="createNewResumeOnServer(resume)"><i class="far fa-clone"></i></a>
+                <a @click="sendDeleteRequest(resume._id)"><i class="fa fa-trash"></i></a>  
               </div>
             </div>
           </div>
