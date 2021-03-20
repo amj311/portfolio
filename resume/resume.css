@@ -20,6 +20,12 @@ body {
     color: var(--dark);
 }
 
+div#app {
+    flex-direction: column;
+    height: 100vh;
+}
+
+
 a {
     cursor: pointer;
 }
@@ -45,10 +51,8 @@ a {
 }
 
 div#mainToolBar {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+    box-sizing: border-box;
     z-index: 5;
     background: #fff;
     box-shadow: 0 0 5px #0005;
@@ -211,6 +215,28 @@ div#fileName .editable {
 }
 
 
+div#editorSpace {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+div#leftPanel {
+    max-width: 15rem;
+}
+
+.ui-panel {
+    background: #fff;
+    box-shadow: 0 0 5px #0005;
+}
+
+div#centerPanel {flex-grow: 1;overflow: auto;position: relative;}
+
+
+
+
+
 
 #page-wrapper {
     margin: 10px auto;
@@ -257,7 +283,12 @@ div#sideBar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    overflow: hidden;
 }
+
+
+.decor-geo-sqr {position: absolute;width: 20rem;height: 20rem;background: #fff;opacity: .15;}
 
 div#sideBarHeader {
     height: var(--letterhead-height);

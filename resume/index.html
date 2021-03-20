@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <div id="app" style="display: none;" :style="{display: 'block !important'}">
+  <div id="app" style="display: none;" :style="{display: 'flex !important'}">
     <div ui id="mainToolBar">
       <div class="toolbar-row" v-if="resume">
         <div id="fileName"><editable v-model="resume.fileName"></editable></div>
@@ -21,7 +21,7 @@
 
       <div class="toolbar-row">
         <div id="mainActions" class="toolbar-button-list">
-          <a @click="createNewResumeOnServer">New</a>
+          <a @click="createNewResumeOnServer(null)">New</a>
           <a @click="startOpenSequence">Open</a>
           <a @click="createNewResumeOnServer(resume)">Duplicate</a>
           <a @click="saveResumeToServer">Save</a>
@@ -35,49 +35,69 @@
         </div>
       </div>
     </div>
+      <div v-if="!resume">
 
-    <div v-if="!resume">
+      </div>
+      <div v-else id="editorSpace">
 
-    </div>
-    <div v-else>
-      <div ui id="mainToolBarSpacer"></div>
+        <div id="leftPanel" ui class="ui-panel"></div>
 
-      <div id="page-wrapper">
-        <div id="page">
-          <div id="bgLayer" class="page-layer"></div>
-          <div id="contentLayer" class="page-layer">
-            <div id="sideBar">
-              <div id="sideBarHeader">
-                <!-- <h1>{{resume.name}}</h1> -->
-                <div class="logo" :style="{backgroundImage: `url(${resume.logo})`}" ></div>
-              </div>
-              <div id="sideBarContent">
-                <sectionlist :path="['sideSections']" :list="resume.sideSections" />
-              </div>
-            </div>
-  
-            <div id="mainPanel">
-              <div id="letterhead">
-                <h1><editable v-model="resume.bio.name" /></h1>
-                <h2><editable v-model="resume.bio.subtitle" /></h2>
-                <hr />
-              </div>
-  
-              <div id="mainContent">
-                <div v-if="resume.showBio" class="main-content-section">
-                  <h2>Personal Profile</h2>
-                  <div>{{resume?.bio}}</div>
+        <!-- <div ui id="mainToolBarSpacer"></div> -->
+
+        <div id="centerPanel">        
+          <div id="page-wrapper">
+            <div id="page">
+              <div id="bgLayer" class="page-layer"></div>
+              <div id="contentLayer" class="page-layer">
+                <div id="sideBar">
+                  <div class="decor-geo-sqr" style="
+                    top: -205px;
+                    left: -210px;
+                    transform: rotate(57deg);
+                    opacity: .1;
+                  "></div>
+                  <div class="decor-geo-sqr" style="
+                    top: -233px;
+                    left: 40px;
+                    transform: rotate(-67deg);
+                    /* opacity: .1; */
+                  "></div>
+                  
+                  <div id="sideBarHeader">
+                    <!-- <h1>{{resume.name}}</h1> -->
+                    <div class="logo" v-if="resume.logo" :style="{backgroundImage: `url(${resume.logo})`}" ></div>
+                  </div>
+                  <div id="sideBarContent">
+                    <sectionlist :path="['sideSections']" :list="resume.sideSections" />
+                  </div>
                 </div>
-  
-                <sectionlist :path="['mainSections']" :list="resume.mainSections" />
+      
+                <div id="mainPanel">
+                  <div id="letterhead">
+                    <h1><editable v-model="resume.bio.name" /></h1>
+                    <h2><editable v-model="resume.bio.subtitle" /></h2>
+                    <hr />
+                  </div>
+      
+                  <div id="mainContent">
+                    <div v-if="resume.showBio" class="main-content-section">
+                      <h2>Personal Profile</h2>
+                      <div>{{resume?.bio}}</div>
+                    </div>
+      
+                    <sectionlist :path="['mainSections']" :list="resume.mainSections" />
 
+                  </div>
+      
+                </div>
               </div>
-  
             </div>
           </div>
         </div>
+
+        <div id="rightPanel" ui class="ui-panel"></div>
+
       </div>
-    </div>
 
     <div ui>
       <div id="pdfModal" v-if="showPdfModal" class="modal-wrapper">
