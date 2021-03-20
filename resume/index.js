@@ -211,7 +211,7 @@ const app = new Vue({
 
   watch: {
     resume(val) {
-      document.title = val?.fileName? val.bio.name+" "+val.fileName : "Resume Builder"
+      document.title = val?.fileName? val.bio?.name+" "+val.fileName : "Resume Builder"
     },
     pageZoom(val) {
       document.querySelector(':root').style.setProperty("--pageZoom", val);
@@ -247,7 +247,7 @@ const app = new Vue({
 
     createNewResumeOnServer(givenData) {
       let resumeData;
-      if (!givenData) resumeData = defaultResumeData;
+      if (!givenData) resumeData = {...defaultResumeData};
       else {
         resumeData = {...givenData}
         resumeData = {...givenData}
@@ -255,7 +255,7 @@ const app = new Vue({
       }
       delete resumeData._id;
 
-      this.resume = {};
+      this.resume = null;
 
       axios.post(this.apiUrl+"/resume/create", resumeData)
       .then((res)=>{
