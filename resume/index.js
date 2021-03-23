@@ -85,7 +85,8 @@ Vue.component('listItemControls',{
       Vue.set(this.list,targetIdx,item);
     },
     duplicate() {
-      this.list.push({...this.list[this.idx]});
+      let newObj = JSON.parse(JSON.stringify(this.list[this.idx]));
+      this.list.push(newObj);
       initVueSave();
     },
     remove() {
