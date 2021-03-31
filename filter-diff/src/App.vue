@@ -77,7 +77,7 @@ export default {
   methods: {
       async getData() {
           this.dataIsLoading = true;
-          let data = await fetch("http://portfolio.simplyoliveapps.com/portfolio-data.json").then(
+          let data = await fetch("https://portfolio.simplyoliveapps.com/portfolio-data.json").then(
               res => res.json()
           )
           console.log(data)
