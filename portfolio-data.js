@@ -44,7 +44,7 @@ const portfolioData = {
         {
             "title": "Oliver Test",
             "summary": "A light-weight library for unit-testing JavaScript and TypeScript",
-            "stack": ["js","ts","npm"],
+            "stack": ["js","ts","node","npm"],
             "repoUrl": "https://github.com/amj311/oliver-test",
             "liveUrl": "https://www.npmjs.com/package/oliver-test",
             "npmUrl": "https://www.npmjs.com/package/oliver-test",
