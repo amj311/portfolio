@@ -84,7 +84,7 @@
                   </div>
                 </BannerSection>
                 
-                <!-- <BannerSection id="apps">
+                <BannerSection id="apps">
                   <h2>My Work</h2>
                   <br>
                   <div id="liveapps">
@@ -99,7 +99,7 @@
                 <BannerSection ></BannerSection>
                 <BannerSection ></BannerSection>
                 <BannerSection ></BannerSection>
-                <BannerSection ></BannerSection> -->
+                <BannerSection ></BannerSection>
 
             </div>
         </div>
