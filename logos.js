@@ -1,4 +1,4 @@
-{
+const logos = {
     "vue":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
     "react":"https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png",
     "angular":"https://cdn.freebiesupply.com/logos/large/2x/angular-icon-1-logo-png-transparent.png",

@@ -1,4 +1,4 @@
-{
+const portfolioData = {
     "bio":{
         "firstname":"Arthur",
         "lastname":"Judd",
