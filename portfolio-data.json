@@ -33,7 +33,7 @@
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png"
         },
         {
-            "title": "Cool Weather",
+            "title": "Oliver Test",
             "summary": "A sleek weather app with real-time data and location detection.",
             "stack": ["vue","js"],
             "liveUrl": "https://weather.simplyoliveapps.org"
