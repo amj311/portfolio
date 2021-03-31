@@ -54,14 +54,14 @@
             "summary": "An in-browser Simon Says game. Try to beat the high score!",
             "stack": ["vue","js","node","mongo"],
             "repoUrl": "https://github.com/amj311/screen-slaver",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/screenslaver.png",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/screenslaver.gif",
             "liveUrl": "https://screen-slaver.simplyoliveapps.com"
         },
         {
             "title": "PDF Viewer",
             "summary": "A browser tool for inspecting large and complex PDF files.",
             "stack": ["vue","ts"],
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.png"
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.gif"
         }
     ]   
 }
