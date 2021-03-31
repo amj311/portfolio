@@ -12,7 +12,7 @@
               </svg>
           </div>
           
-          <HeroSection id="hero" :imgurl="'http://portfolio.simplyoliveapps.com/filter-diff/src/assets/images/hero.jpg'">
+          <HeroSection id="hero" :imgurl="'https://portfolio.simplyoliveapps.com/filter-diff/src/assets/images/hero.jpg'">
               <div style="">
                   <h1 style="font-size: 3em;">{{data.bio.firstname}} {{data.bio.lastname}}</h1>
                   <h4>{{data.bio.subtitle}}</h4>
