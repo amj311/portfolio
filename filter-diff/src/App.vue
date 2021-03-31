@@ -130,13 +130,13 @@ export default {
   methods: {
       async getData() {
           this.dataIsLoading = true;
-          let data = await fetch("https://portfolio.simplyoliveapps.com/portfolio-data.json").then(
-              res => res.json()
-          )
-          let logos = await fetch("https://portfolio.simplyoliveapps.com/logos.json").then(
-              res => res.json()
-          )
-          this.data = data;
+          // let data = await fetch("https://portfolio.simplyoliveapps.com/portfolio-data.json").then(
+          //     res => res.json()
+          // )
+          // let logos = await fetch("https://portfolio.simplyoliveapps.com/logos.json").then(
+          //     res => res.json()
+          // )
+          this.data = portfolioData;
           this.logos = logos;
           
           setTimeout(()=> {
