@@ -30,6 +30,15 @@
             "summary": "A sleek weather app with real-time data and location detection.",
             "stack": ["vue","js"],
             "liveUrl": "https://weather.simplyoliveapps.org",
+            "repoUrl": "https://github.com/amj311/cool_weather",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png"
+        },
+        {
+            "title": "Publish Link Generator",
+            "summary": "A tool for generating links to create preset social media posts.",
+            "stack": ["vue","js"],
+            "liveUrl": "https://publisher.simplyoliveapps.org",
+            "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png"
         },
         {
