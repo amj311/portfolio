@@ -43,15 +43,16 @@
         },
         {
             "title": "Oliver Test",
-            "summary": "A sleek weather app with real-time data and location detection.",
-            "stack": ["ts", "npm"],
+            "summary": "A light-weight library for unit-testing JavaScript and TypeScript",
+            "stack": ["js","ts","npm"],
             "repoUrl": "https://github.com/amj311/oliver-test",
+            "liveUrl": "https://www.npmjs.com/package/oliver-test",
             "npmUrl": "https://www.npmjs.com/package/oliver-test",
             "previewUrl": "https://raw.githubusercontent.com/amj311/oliver-test/HEAD/docs/images/logo-scroll.gif"
         },
         {
             "title": "Screen Slaver",
-            "summary": "An in-browser Simon Says game. Try to beat the high score!",
+            "summary": "An in-browser \"Simon Says\" game. Try to beat the high score!",
             "stack": ["vue","js","node","mongo"],
             "repoUrl": "https://github.com/amj311/screen-slaver",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/screenslaver.gif",
