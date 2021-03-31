@@ -29,15 +29,15 @@
             "title": "Cool Weather",
             "summary": "A sleek weather app with real-time data and location detection.",
             "stack": ["vue","js"],
-            "liveUrl": "https://weather.simplyoliveapps.org",
+            "liveUrl": "https://weather.simplyoliveapps.cpm",
             "repoUrl": "https://github.com/amj311/cool_weather",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png"
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/weather.gif"
         },
         {
             "title": "Publish Link Generator",
             "summary": "A tool for generating links to create preset social media posts.",
             "stack": ["vue","js"],
-            "liveUrl": "https://publisher.simplyoliveapps.org",
+            "liveUrl": "https://publisher.simplyoliveapps.cpm",
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png"
         },
@@ -45,7 +45,6 @@
             "title": "Oliver Test",
             "summary": "A sleek weather app with real-time data and location detection.",
             "stack": ["vue","js"],
-            "liveUrl": "https://npm.simplyoliveapps.org",
             "repoUrl": "https://github.com/amj311/oliver-test",
             "npmUrl": "https://www.npmjs.com/package/oliver-test",
             "previewUrl": "https://raw.githubusercontent.com/amj311/oliver-test/HEAD/docs/images/logo-scroll.gif"
