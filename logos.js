@@ -14,5 +14,7 @@ const logos = {
     "java": "https://cdn.freebiesupply.com/logos/large/2x/java-14-logo-png-transparent.png",
     "android": "https://logodownload.org/wp-content/uploads/2015/05/android-logo-5.png",
     "aws": "https://d1.awsstatic.com/logos/aws-logo/full-color/AWS-Logo_Full-Color_500x300.e3aa5e1294717e6c708baa2d3c1e2d2fb707ae84.png",
-    "sql": "https://sqlskull.com/wp-content/uploads/2019/11/sql-logo.png"
+    "sql": "https://sqlskull.com/wp-content/uploads/2019/11/sql-logo.png",
+    "python": "https://logos-download.com/wp-content/uploads/2016/10/Python_logo_icon.png",
+    "opencv": "https://hacklab.cz/files/images/opencv_logo.gif"
 }
