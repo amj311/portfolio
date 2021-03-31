@@ -1,10 +1,10 @@
 {
-    "vue":"",
-    "react":"",
-    "angular":"",
-    "js":"",
-    "ts":"",
-    "node":"",
-    "mongo":"",
-    "npm":""
+    "vue":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+    "react":"https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem.png",
+    "angular":"https://cdn.freebiesupply.com/logos/large/2x/angular-icon-1-logo-png-transparent.png",
+    "js":"https://www.i-programmer.info/images/stories/prof/iprogrammer/JavascriptName/JSlogo.jpg",
+    "ts":"https://www.onlinemarketingtools.pro/wp-content/uploads/2018/10/TypeScript-logo.jpg",
+    "node":"https://cdn.freebiesupply.com/logos/large/2x/nodejs-icon-logo-png-transparent.png",
+    "mongo":"https://cms-assets.tutsplus.com/uploads/users/1116/posts/24835/preview_image/mongodb-logo.png",
+    "npm":"https://www.logolynx.com/images/logolynx/7f/7fb976a537620fed310872d533cd161c.png"
 }
