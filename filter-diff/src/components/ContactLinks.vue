@@ -1,9 +1,9 @@
 <template>
   <div class="contact-links-group">
-      <a :href="links.email.url" :title="links.email.display"><i class="fa fa-envelope"></i></a>
-      <a :href="links.linkedin.url" :title="links.linkedin.display"><i class="fab fa-linkedin"></i></a>
-      <a :href="links.github.url" :title="links.github.display"><i class="fab fa-github"></i></a>
-      <a :href="links.twitter.url" :title="links.twitter.display"><i class="fab fa-twitter"></i></a>
+      <a :href="links.email.url" :title="links.email.display" target="blank"><i class="fa fa-envelope"></i></a>
+      <a :href="links.linkedin.url" :title="links.linkedin.display" target="blank"><i class="fab fa-linkedin"></i></a>
+      <a :href="links.github.url" :title="links.github.display" target="blank"><i class="fab fa-github"></i></a>
+      <a :href="links.twitter.url" :title="links.twitter.display" target="blank"><i class="fab fa-twitter"></i></a>
   </div>
 </template>
 
@@ -16,18 +16,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.contact-links-group a {
+  color: inherit;
+  margin-right: .5em;
 }
 </style>

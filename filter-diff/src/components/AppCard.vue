@@ -1,5 +1,5 @@
 <template>
-  <section class="section-wrapper">
+  <section class="app-card card shadow-sm">
       <div class="section-content-wrapper max-content-width">
           <slot>
               <h2>I'm a section!</h2>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'BannerSection',
+  name: 'AppdCard',
 }
 </script>
 
