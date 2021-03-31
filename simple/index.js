@@ -18,7 +18,7 @@ const app = new Vue({
 
     data: {
         dataIsLoading: true,
-        data: portfolio,
+        data: null,
     },
 
     beforeMount() {
@@ -28,6 +28,11 @@ const app = new Vue({
     methods: {
         async getData() {
             this.dataIsLoading = true;
+            let data = await fetch("http://portfolio.simplyoliveapps.com/portfolio-data.json").then(
+                res => res.json()
+            )
+            console.log(data)
+            this.data = data;
             
             setTimeout(()=> {
                 this.dataIsLoading = false;
