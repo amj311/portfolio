@@ -24,7 +24,7 @@
                     </svg>
                 </div>
                 
-                <HeroSection :imgurl="'http://portfolio.simplyoliveapps.com/simple/images/hero.jpg'">
+                <HeroSection :imgurl="'http://portfolio.simplyoliveapps.com/filter-diff/src/assets/images/hero.jpg'">
                     <div style="width: 75%; margin-right: 2rem;">
                         <h1 style="font-size: 3em;">{{data.bio.firstname}} {{data.bio.lastname}}</h1>
                         <h4>{{data.bio.subtitle}}</h4>
