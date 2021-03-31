@@ -160,7 +160,7 @@ export default {
     --text-on-primary: white;
     --text-on-shade: white;
     --text-on-dark: var(--light);
-    --max-content-width: 80rem;
+    --max-content-width: 60rem;
 }
 
 body {
