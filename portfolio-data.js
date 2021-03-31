@@ -61,7 +61,7 @@ const portfolioData = {
         {
             "title": "PDF Viewer",
             "summary": "A browser tool for inspecting large and complex PDF files. Part of ongoing research.",
-            "stack": ["vue","ts","node"],
+            "stack": ["python","opencv","vue","ts","node"],
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.gif"
         }
     ]   
