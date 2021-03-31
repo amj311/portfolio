@@ -1,109 +1,106 @@
 <template>
   <div id="app">
     <div v-if="dataIsLoading" style="margin-top: 48vh; height: 3rem; text-align: center; color: #fff">
-            Loading...
-        </div>
-        <div v-else style="display: none;" :style="{display: dataIsLoading ? 'none' : 'block !important'}">
-            
-            <!-- <div id="topBar" class="fixed-diff">
-                <div class="top-bar-content">
-                    <div class="menu-button">
-                        <a href="#"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <div class="contact-nav-group">
-                        <ContactLinks :links="data.contact"></ContactLinks>
-                    </div>
-                </div>
-            </div> -->
+      Loading...
+    </div>
+    <div v-else style="display: none;" :style="{display: dataIsLoading ? 'none' : 'block !important'}">
+        
+          <div id="fancytop">
+              <svg viewBox="0 0 500 10" preserveAspectRatio="none">
+                  <rect width="500" height="10" style="fill: #fff;opacity: .07;transform: rotate(-2deg);transform-origin: bottom left;" x="0" y="0"></rect>
+                  <rect style="fill: #fff;opacity: .04;transform: rotate(1deg);transform-origin: bottom right;" y="0" x="0" height="10" width="500"></rect>
+              </svg>
+          </div>
+          
+          <HeroSection id="hero" :imgurl="'http://portfolio.simplyoliveapps.com/filter-diff/src/assets/images/hero.jpg'">
+              <div style="">
+                  <h1 style="font-size: 3em;">{{data.bio.firstname}} {{data.bio.lastname}}</h1>
+                  <h4>{{data.bio.subtitle}}</h4>
+                  <hr>
+                  <ContactLinks :links="data.contact" style="font-size: 1.5em"></ContactLinks>
+              </div>
+          </HeroSection>
 
-            <!-- <div id="scrollNav" class="fixed-diff">
-                <div class="scroll-nav-content">
-                    <div class="scroll-nav-item">
-                        <div class="scroll-nav-bullet"></div>
-                        <div class="scroll-nav-label">Welcome</div>
-                    </div>
-                </div>
-            </div> -->
-
-            <!-- <div class="under-fixed-diff"> -->
-                <div id="fancytop">
-                    <svg viewBox="0 0 500 10" preserveAspectRatio="none">
-                        <rect width="500" height="10" style="fill: #fff;opacity: .07;transform: rotate(-2deg);transform-origin: bottom left;" x="0" y="0"></rect>
-                        <rect style="fill: #fff;opacity: .04;transform: rotate(1deg);transform-origin: bottom right;" y="0" x="0" height="10" width="500"></rect>
-                    </svg>
-                </div>
-                
-                <HeroSection id="hero" :imgurl="'http://portfolio.simplyoliveapps.com/filter-diff/src/assets/images/hero.jpg'">
-                    <div style="">
-                        <h1 style="font-size: 3em;">{{data.bio.firstname}} {{data.bio.lastname}}</h1>
-                        <h4>{{data.bio.subtitle}}</h4>
-                        <hr>
-                        <ContactLinks :links="data.contact" style="font-size: 1.5em"></ContactLinks>
-                    </div>
-                </HeroSection>
-
-                <BannerSection>
-                  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between">
-                    <div style="width: 70%;">
-                      <h2>Hey there!</h2>
-                      <p style="font-size: 1.2em;">{{data.bio.intro}} Feel free to say hi to me!</p>
-                    </div>
-                    <div>
-                        <a target="blank" :href="data.contact.email.url" class="btn btn-primary shadow-sm btn-lg">👋 Say Hi!</a>
-                    </div>
-                  </div>
-                </BannerSection>
-
-                <BannerSection id="skills" class="bg-shade" style="text-align: center">
-                  <h2>What I Love To Do</h2>
-                  <div class="flex-grid-container lg">
-                    <div class="icon-tile flex-grid-item">
-                      <div class="icon-tile-icon"><i class="fa fa-laptop-code"></i></div>
-                      <div class="icon-tile-label">Web & Mobile Development</div>
-                    </div>
-                    <div class="icon-tile flex-grid-item">
-                      <div class="icon-tile-icon"><i class="fa fa-cubes"></i></div>
-                      <div class="icon-tile-label">Quality Software Architecture</div>
-                    </div>
-                    <div class="icon-tile flex-grid-item">
-                      <div class="icon-tile-icon"><i class="fa fa-database"></i></div>
-                      <div class="icon-tile-label">Design Servers and APIs</div>
-                    </div>
-                    <div class="icon-tile flex-grid-item">
-                      <div class="icon-tile-icon"><i class="fa fa-palette"></i></div>
-                      <div class="icon-tile-label">UI/UX Design</div>
-                    </div>
-                    <div class="icon-tile flex-grid-item">
-                      <div class="icon-tile-icon"><i class="fa fa-lightbulb"></i></div>
-                      <div class="icon-tile-label">Creative Problem Solving</div>
-                    </div>
-                    <div class="icon-tile flex-grid-item">
-                      <div class="icon-tile-icon"><i class="fa fa-graduation-cap"></i></div>
-                      <div class="icon-tile-label">Learn New Things</div>
-                    </div>
-                  </div>
-                </BannerSection>
-                
-                <BannerSection id="apps">
-                  <h2>My Work</h2>
-                  <br>
-                  <div id="liveapps">
-                    <h4>Live Apps</h4>
-                    <div class="flex-grid-container">
-                      <AppCard class="flex-grid-item"></AppCard>
-                    </div>
-                  </div>
-                </BannerSection>
-                <BannerSection ></BannerSection>
-                <BannerSection ></BannerSection>
-                <BannerSection ></BannerSection>
-                <BannerSection ></BannerSection>
-                <BannerSection ></BannerSection>
-                <BannerSection ></BannerSection>
-
+          <BannerSection>
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between">
+              <div style="width: 70%;">
+                <h2>Hey there!</h2>
+                <p style="font-size: 1.2em;">{{data.bio.intro}} Feel free to say hi to me!</p>
+              </div>
+              <div>
+                  <a target="blank" :href="data.contact.email.url" class="btn btn-primary shadow-sm btn-lg">👋 Say Hi!</a>
+              </div>
             </div>
-        </div>
-  <!-- </div> -->
+          </BannerSection>
+
+          <BannerSection id="skills" class="bg-shade" style="text-align: center">
+            <h2>What I Love To Do</h2>
+            <div class="flex-grid-container lg">
+              <div class="icon-tile flex-grid-item">
+                <div class="icon-tile-icon"><i class="fa fa-laptop-code"></i></div>
+                <div class="icon-tile-label">Web & Mobile Development</div>
+              </div>
+              <div class="icon-tile flex-grid-item">
+                <div class="icon-tile-icon"><i class="fa fa-cubes"></i></div>
+                <div class="icon-tile-label">Quality Software Architecture</div>
+              </div>
+              <div class="icon-tile flex-grid-item">
+                <div class="icon-tile-icon"><i class="fa fa-database"></i></div>
+                <div class="icon-tile-label">Design Servers and APIs</div>
+              </div>
+              <div class="icon-tile flex-grid-item">
+                <div class="icon-tile-icon"><i class="fa fa-palette"></i></div>
+                <div class="icon-tile-label">UI/UX Design</div>
+              </div>
+              <div class="icon-tile flex-grid-item">
+                <div class="icon-tile-icon"><i class="fa fa-lightbulb"></i></div>
+                <div class="icon-tile-label">Creative Problem Solving</div>
+              </div>
+              <div class="icon-tile flex-grid-item">
+                <div class="icon-tile-icon"><i class="fa fa-graduation-cap"></i></div>
+                <div class="icon-tile-label">Learn New Things</div>
+              </div>
+            </div>
+          </BannerSection>
+          
+          <BannerSection id="apps">
+            <h2>My Work</h2>
+            <br>
+            <div id="liveapps">
+              <h4>Solo Projects</h4>
+              <div class="flex-grid-container">
+                <div v-for="app in filterApps(app => app.previewUrl && !app.team)" :key="app.title" class="flex-grid-item">
+                  <AppCard :app="app" :logos="logos"></AppCard>
+                </div>
+                <!-- <div v-for="app in personalNoPreviewApps" :key="app.title" class="flex-grid-item">
+                  <AppCard :app="app" :logos="logos"></AppCard>
+                </div> -->
+              </div>
+              <!-- <h4>Collaborative Projects</h4>
+              <div class="flex-grid-container">
+                <div v-for="app in personalPreviewApps" :key="app.title" class="flex-grid-item">
+                  <AppCard :app="app" :logos="logos"></AppCard>
+                </div>
+                <div v-for="app in personalNoPreviewApps" :key="app.title" class="flex-grid-item">
+                  <AppCard :app="app" :logos="logos"></AppCard>
+                </div>
+              </div> -->
+            </div>
+          </BannerSection>
+
+          <BannerSection class="bg-shade">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between">
+              <div style="width: 70%;">
+                <h2>Let's work together!</h2>
+              </div>
+              <div>
+                  <p><a target="blank" :href="data.contact.email.url" class="btn btn-secondary shadow-sm btn-lg">Email Me!</a></p>
+              </div>
+            </div>
+            <ContactLinks :links="data.contact" style="font-size: 1.5em"></ContactLinks>
+          </BannerSection>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -123,6 +120,7 @@ export default {
   data() { return {
       dataIsLoading: true,
       data: null,
+      logos: null,
   }},
 
   beforeMount() {
@@ -135,32 +133,44 @@ export default {
           let data = await fetch("https://portfolio.simplyoliveapps.com/portfolio-data.json").then(
               res => res.json()
           )
-          console.log(data)
+          let logos = await fetch("https://portfolio.simplyoliveapps.com/logos.json").then(
+              res => res.json()
+          )
           this.data = data;
+          this.logos = logos;
           
           setTimeout(()=> {
               this.dataIsLoading = false;
           }, 50);
-      }
+      },
+
+      filterApps(filterFunc) {
+          return this.data.apps.filter(app => filterFunc(app));
+      },
+  },
+
+  computed: {
   }
 }
 </script>
 
 <style>
 :root {
+    font-size: 15px;  
     --tint: #5297FF;
     --primary: #3073D9;
     --shade: #335484;
-    --accent: #D9A030;
-    --accent-light: hsl(40deg 70% 58%);
-    --accent-dark: #8C5E03;
+    --accent: hsl(50, 69%, 45%);
+    --accent-light: hsl(50, 70%, 58%);
+    --accent-dark: hsl(50, 96%, 28%);
     --light: #e0e0ef;
     --grey: #888;
     --dark: #111;
     --text-on-primary: white;
+    --text-on-accent: white;
     --text-on-shade: white;
     --text-on-dark: var(--light);
-    --max-content-width: 60rem;
+    --max-content-width: 1200px;
 }
 
 body {
@@ -200,6 +210,10 @@ body [class*="primary"] {
     background: var(--primary) !important;
     color: var(--text-on-primary);
 }
+body [class*="secondary"] {
+    background: var(--accent-light) !important;
+    color: var(--text-on-accent);
+}
 body [class*="shade"] {
     background: var(--shade) !important;
     color: var(--text-on-shade);
@@ -214,6 +228,9 @@ body [class*="shade"] {
 
 .btn[class*="primary"] {
     border-color: var(--primary) !important;
+}
+.btn[class*="secondary"] {
+    border-color: var(--accent) !important;
 }
 .btn[class*="outline"] {
     background: transparent !important;
@@ -312,7 +329,7 @@ section:not(.hero-wrapper) h4 {
 
 
 .hero-wrapper {
-    min-height: 50vh;
+    min-height: 40vh;
     background-size: cover;
     background-position: center center;
     box-shadow: inset 0 100vh 0 #0008, inset 0 0 10rem 1rem #000;
@@ -343,4 +360,12 @@ section:not(.hero-wrapper) h4 {
     color: var(--accent-light);
 }
 
+
+#apps .flex-grid-item {
+  width: calc(32% - 2rem);
+  max-width: 400px;
+  min-width: 250px;
+  margin: 1rem;
+  flex-grow: 1;
+}
 </style>
