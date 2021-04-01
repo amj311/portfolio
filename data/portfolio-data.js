@@ -30,7 +30,7 @@ const portfolioData = {
             "summary": "A browser tool for inspecting large and complex PDF files. Part of ongoing research.",
             "stack": ["python","opencv","vue","ts","node"],
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.gif",
-            "tags": ["solo"]
+            "tags": ["solo", "personal"]
         },
         {
             "title": "Oliver Test",
@@ -40,7 +40,7 @@ const portfolioData = {
             "liveUrl": "https://www.npmjs.com/package/oliver-test",
             "npmUrl": "https://www.npmjs.com/package/oliver-test",
             "previewUrl": "https://raw.githubusercontent.com/amj311/oliver-test/HEAD/docs/images/logo-scroll.gif",
-            "tags": ["solo"]
+            "tags": ["solo", "personal"]
         },
         {
             "title": "Screen Slaver",
@@ -49,7 +49,7 @@ const portfolioData = {
             "repoUrl": "https://github.com/amj311/screen-slaver",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/screenslaver.gif",
             "liveUrl": "https://screen-slaver.simplyoliveapps.com",
-            "tags": ["solo"]
+            "tags": ["solo", "personal"]
         },
         {
             "title": "Cool Weather",
@@ -58,7 +58,7 @@ const portfolioData = {
             "liveUrl": "https://weather.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/cool_weather",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/weather.gif",
-            "tags": ["solo"]
+            "tags": ["solo", "personal"]
         },
         {
             "title": "Publish Link Generator",
@@ -67,7 +67,21 @@ const portfolioData = {
             "liveUrl": "https://publisher.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png",
-            "tags": ["solo"]
+            "tags": ["solo", "personal"]
+        },
+        {
+            "title": "Android Twitter Clone",
+            "summary": "A tool for generating links to create preset social media posts.",
+            "stack": ["android","java", "aws"],
+            "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
+            "tags": ["solo", "school"]
+        },
+        {
+            "title": "Android Genealogy Map",
+            "summary": "A tool for generating links to create preset social media posts.",
+            "stack": ["android","java", "sql"],
+            "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
+            "tags": ["solo", "school"]
         }
     ]   
 }
