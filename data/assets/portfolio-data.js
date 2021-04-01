@@ -29,7 +29,8 @@ const portfolioData = {
             "title": "PDF Viewer",
             "summary": "A browser tool for inspecting large and complex PDF files. Part of ongoing research.",
             "stack": ["python","opencv","vue","ts","node"],
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.gif"
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.gif",
+            "tags": ["solo"]
         },
         {
             "title": "Oliver Test",
@@ -38,7 +39,8 @@ const portfolioData = {
             "repoUrl": "https://github.com/amj311/oliver-test",
             "liveUrl": "https://www.npmjs.com/package/oliver-test",
             "npmUrl": "https://www.npmjs.com/package/oliver-test",
-            "previewUrl": "https://raw.githubusercontent.com/amj311/oliver-test/HEAD/docs/images/logo-scroll.gif"
+            "previewUrl": "https://raw.githubusercontent.com/amj311/oliver-test/HEAD/docs/images/logo-scroll.gif",
+            "tags": ["solo"]
         },
         {
             "title": "Screen Slaver",
@@ -46,7 +48,8 @@ const portfolioData = {
             "stack": ["vue","js","node","mongo"],
             "repoUrl": "https://github.com/amj311/screen-slaver",
             "previewUrl": "https://portfolio.simplyoliveapps.com/assets/screenslaver.gif",
-            "liveUrl": "https://screen-slaver.simplyoliveapps.com"
+            "liveUrl": "https://screen-slaver.simplyoliveapps.com",
+            "tags": ["solo"]
         },
         {
             "title": "Cool Weather",
@@ -54,7 +57,8 @@ const portfolioData = {
             "stack": ["vue","js"],
             "liveUrl": "https://weather.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/cool_weather",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/weather.gif"
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/weather.gif",
+            "tags": ["solo"]
         },
         {
             "title": "Publish Link Generator",
@@ -62,7 +66,8 @@ const portfolioData = {
             "stack": ["vue","js"],
             "liveUrl": "https://publisher.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png"
+            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png",
+            "tags": ["solo"]
         }
     ]   
 }
