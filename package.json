@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "update_data": "git add data/ && git commit -m \"auto update data\" && git push && git push cpanel"
+  }
+}
