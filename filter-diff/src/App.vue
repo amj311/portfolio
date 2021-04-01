@@ -68,23 +68,10 @@
             <br>
             <div id="liveapps">
               <h4>Solo Projects</h4>
-              <div class="flex-grid-container">
-                <div v-for="app in filterApps(app => app.previewUrl && !app.team)" :key="app.title" class="flex-grid-item">
-                  <AppCard :app="app" :logos="logos"></AppCard>
-                </div>
-                <!-- <div v-for="app in personalNoPreviewApps" :key="app.title" class="flex-grid-item">
-                  <AppCard :app="app" :logos="logos"></AppCard>
-                </div> -->
-              </div>
-              <!-- <h4>Collaborative Projects</h4>
-              <div class="flex-grid-container">
-                <div v-for="app in personalPreviewApps" :key="app.title" class="flex-grid-item">
-                  <AppCard :app="app" :logos="logos"></AppCard>
-                </div>
-                <div v-for="app in personalNoPreviewApps" :key="app.title" class="flex-grid-item">
-                  <AppCard :app="app" :logos="logos"></AppCard>
-                </div>
-              </div> -->
+              <ImageSortedAppList :list="appCategory('solo')"></ImageSortedAppList>
+              <br>
+              <h4>Collaborative Projects</h4>
+              <ImageSortedAppList :list="appCategory('solo',false)"></ImageSortedAppList>
             </div>
           </BannerSection>
 
@@ -108,6 +95,8 @@ import HeroSection from './components/HeroSection.vue'
 import BannerSection from './components/BannerSection.vue'
 import ContactLinks from './components/ContactLinks.vue'
 import AppCard from './components/AppCard.vue'
+import ImageSortedAppList from './components/ImageSortedAppList.vue'
+import AppList from './components/AppList.vue'
 
 export default {
   name: 'App',
@@ -115,7 +104,9 @@ export default {
     HeroSection,
     BannerSection,
     ContactLinks,
-    AppCard
+    AppCard,
+    AppList,
+    ImageSortedAppList
   },
   data() { return {
       dataIsLoading: true,
@@ -130,12 +121,6 @@ export default {
   methods: {
       async getData() {
           this.dataIsLoading = true;
-          // let data = await fetch("https://portfolio.simplyoliveapps.com/portfolio-data.json").then(
-          //     res => res.json()
-          // )
-          // let logos = await fetch("https://portfolio.simplyoliveapps.com/logos.json").then(
-          //     res => res.json()
-          // )
           this.data = portfolioData;
           this.logos = logos;
           
@@ -144,9 +129,15 @@ export default {
           }, 50);
       },
 
-      filterApps(filterFunc) {
-          return this.data.apps.filter(app => filterFunc(app));
+      filterApps(filterFunc, list=null) {
+          if (!list) list = this.data.apps;
+          return list?.filter(filterFunc);
       },
+      appCategory(tag, positive=true, list=null) {
+        if (!list) list = this.data.apps;
+        if (!positive) return this.filterApps(app=>app.tags.indexOf(tag)==-1, list)
+        else return this.filterApps(app => app.tags.indexOf(tag)>-1, list)
+      }
   },
 
   computed: {

@@ -15,9 +15,9 @@
       </span>
     </p>
     <div class="source-links">
-      <a v-if="app.liveUrl" :href="app.liveUrl" target="blank" class="btn btn-primary card-link">See It</a>
       <a v-if="app.repoUrl" :href="app.repoUrl" target="blank" class="card-link"><i class="fa fa-code"></i></a>
       <a v-if="app.npmUrl" :href="app.npmUrl" target="blank" class="card-link"><i class="fab fa-npm"></i></a>
+      <a v-if="app.liveUrl" :href="app.liveUrl" target="blank" class="btn btn-primary card-link shadow-sm">See It</a>
     </div>
   </div>
 </div>
@@ -26,7 +26,10 @@
 <script>
 export default {
   name: 'AppdCard',
-  props: ['app', 'logos']
+  props: ['app'],
+  data() { return  {
+    logos: logos,
+  }},
 }
 </script>
 
@@ -45,6 +48,9 @@ export default {
     width: 100%;
     overflow: hidden;
     border-bottom: 1px solid #0002;
+    background-image: url('../assets/images/loading.gif');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 img.preview-img {
@@ -78,5 +84,9 @@ span.stack-icon {
     line-height: 1em;
     height: var(--stack-icon-size);
     width: var(--stack-icon-size);
+}
+
+.source-links {
+  text-align: right;
 }
 </style>
