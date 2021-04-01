@@ -82,6 +82,20 @@ const portfolioData = {
             "stack": ["android","java", "sql"],
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "tags": ["solo", "school"]
+        },
+        {
+            "title": "Memri",
+            "summary": "Integrates with the FamilySearch API to display memories of your relatives and ancestors.",
+            "stack": ["angular","ts", "node","aws","terraform"],
+            "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
+            "tags": ["work"]
+        },
+        {
+            "title": "Wheel of Family Fortune",
+            "summary": "A 'Wheel of Fortune' game that uses names of your ancestors.",
+            "stack": ["react","js","node","aws","terraform"],
+            "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
+            "tags": ["work"]
         }
     ]
 }
