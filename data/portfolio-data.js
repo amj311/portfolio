@@ -71,17 +71,17 @@ const portfolioData = {
         },
         {
             "title": "Android Twitter Clone",
-            "summary": "A tool for generating links to create preset social media posts.",
+            "summary": "An Android social app that mimics the 'follow' and 'tweet' aspects of Twitter.",
             "stack": ["android","java", "aws"],
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "tags": ["solo", "school"]
         },
         {
             "title": "Android Genealogy Map",
-            "summary": "A tool for generating links to create preset social media posts.",
+            "summary": "An Android app that overlays genealogical events on a Google Map.",
             "stack": ["android","java", "sql"],
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "tags": ["solo", "school"]
         }
-    ]   
+    ]
 }
