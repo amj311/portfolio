@@ -54,7 +54,7 @@ const portfolioData = {
             "summary": "An in-browser \"Simon Says\" game. Try to beat the high score!",
             "stack": ["vue","js","node","mongo","heroku"],
             "repoUrl": "https://github.com/amj311/screen-slaver",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/screen-slaver.gif",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/screenslaver.gif",
             "liveUrl": "https://screen-slaver.simplyoliveapps.com",
             "tags": ["solo", "personal"]
         },
