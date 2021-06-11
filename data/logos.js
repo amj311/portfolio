@@ -17,5 +17,6 @@ const logos = {
     "sql": "https://sqlskull.com/wp-content/uploads/2019/11/sql-logo.png",
     "python": "https://logos-download.com/wp-content/uploads/2016/10/Python_logo_icon.png",
     "opencv": "https://hacklab.cz/files/images/opencv_logo.gif",
-    "socket": "https://joscor.com/wp-content/uploads/2014/10/SOCKETIOICON.gif"
+    "socket": "https://joscor.com/wp-content/uploads/2014/10/SOCKETIOICON.gif",
+    "cloud vision": "https://www.pinclipart.com/picdir/middle/567-5678312_file-cloud-google-vision-api-logo-clipart.png"
 }
