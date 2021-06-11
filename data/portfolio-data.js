@@ -39,14 +39,14 @@ const portfolioData = {
             "title": "OlivePass",
             "summary": "A secure password manager browser extension.",
             "stack": ["vue","ts","node","mongo","heroku"],
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/olive-pass.jpg",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/olive-pass.jpg",
             "tags": ["solo", "personal"]
         },
         {
             "title": "Resume Builder",
             "summary": "Helps to easily write, store, and update different versions of your resume.",
             "stack": ["vue","js","node","mongo","heroku"],
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/resume-builder.jpg",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/resume-builder.jpg",
             "tags": ["solo", "personal"]
         },
         {
@@ -54,7 +54,7 @@ const portfolioData = {
             "summary": "An in-browser \"Simon Says\" game. Try to beat the high score!",
             "stack": ["vue","js","node","mongo","heroku"],
             "repoUrl": "https://github.com/amj311/screen-slaver",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/screen-slaver.jpg",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/screen-slaver.jpg",
             "liveUrl": "https://screen-slaver.simplyoliveapps.com",
             "tags": ["solo", "personal"]
         },
@@ -64,14 +64,14 @@ const portfolioData = {
             "stack": ["vue","js"],
             "liveUrl": "https://weather.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/cool_weather",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/weather.gif",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/weather.gif",
             "tags": ["solo", "personal"]
         },
         {
             "title": "PDF Viewer",
             "summary": "A browser tool for inspecting large and complex PDF files. Part of ongoing research.",
             "stack": ["python","opencv","vue","ts","node"],
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/pdfviewer.gif",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/pdfviewer.gif",
             "tags": ["solo", "personal"]
         },
         {
@@ -80,7 +80,7 @@ const portfolioData = {
             "stack": ["vue","js"],
             "liveUrl": "https://publisher.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
-            "previewUrl": "https://portfolio.simplyoliveapps.com/assets/publisher.png",
+            "previewUrl": "https://portfolio.simplyoliveapps.com/data/assets/publisher.png",
             "tags": ["solo", "personal"]
         },
         {
