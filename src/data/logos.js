@@ -1,0 +1,19 @@
+export const logos = {
+    "Vue":"vue.jpg",
+    "React":"React-Logo-PNG.png",
+    "Angular":"angular-icon-1-logo-png-transparent.png",
+    "JS":"JSlogo.jpg",
+    "TS":"TypeScript-logo.jpg",
+    "Node":"nodejs-icon-logo-png-transparent.png",
+    "Mongo":"mongodb-logo.png",
+    "NPM":"npm.jpg",
+    "Heroku": "heroku-logo.jpg",
+    "Terraform": "terraform.svg",
+    "Java": "java-14-logo-png-transparent.png",
+    "Android": "android-logo-png-transparent.png",
+    "AWS": "aws.png",
+    "SQL": "sql-logo.png",
+    "Python": "Python_logo_icon.png",
+    "OpenCV": "OpenCV_logo_black.png",
+    "WebSockets": "SOCKETIOICON.gif"
+}
