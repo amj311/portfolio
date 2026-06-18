@@ -24,6 +24,8 @@ echo "Deploying static site to ${SSH_USER}@${SSH_HOST}:${REMOTE_PATH}..."
 
 # 1. Ensure remote directory exists
 ssh ${SSH_USER}@${SSH_HOST} "mkdir -p ${REMOTE_PATH}" > $OUT 2>&1
+
+# give ssh user access to write files
 ssh ${SSH_USER}@${SSH_HOST} "sudo chown -R ${SSH_USER}:${SSH_USER} ${REMOTE_PATH} && sudo chmod -R 755 ${REMOTE_PATH}" > $OUT 2>&1
 
 # 2. Clean existing files (scp doesn't sync deletions)
@@ -42,7 +44,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Fix ownership & permissions on the remote server
+# restore ownership to nginx
 echo "Fixing file permissions..."
 ssh ${SSH_USER}@${SSH_HOST} "sudo chown -R ${WEB_USER}:${WEB_USER} ${REMOTE_PATH} && sudo chmod -R 755 ${REMOTE_PATH}" > $OUT 2>&1
 

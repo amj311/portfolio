@@ -32,7 +32,15 @@ export const portfolioData = {
             "previewUrl": "/apps/pdfviewer.gif",
             "tags": ["solo"]
         },
-         {
+        {
+            "title": "Talaria",
+            "summary": "For first-responders to find, contact, and navigate to the nearest facilities with the required resources. Built with AI.",
+            "stack": ["Vue","Node","SQL","AI","OpenStreetMaps"],
+            "previewUrl": "/apps/talaria.gif",
+            "liveUrl": "https://talaria.simplyoliveapps.com",
+            "tags": ["solo", "personal"]
+        },
+		{
             "title": "Oliver Test",
             "summary": "A light-weight library for unit-testing JavaScript and TypeScript",
             "stack": ["JS","TS","Node","npm"],
@@ -52,14 +60,23 @@ export const portfolioData = {
         {
             "title": "Resume Builder",
             "summary": "Helps to easily write, store, and update different versions of your resume.",
-            "stack": ["Vue","JS","Node","mongo","heroku"],
+            "stack": ["Vue","Node","mongo","heroku"],
             "previewUrl": "/apps/resume-builder.jpg",
+            "tags": ["solo", "personal"]
+        },
+        {
+            "title": "Secret Combinations",
+            "summary": "An online multiplayer game similar to Codenames. Help your team find all the secret words, or play against an AI codemaster!",
+            "stack": ["Vue","Node","AI"],
+            "repoUrl": "https://github.com/amj311/codenames2",
+            "previewUrl": "/apps/secret-combinations.gif",
+            "liveUrl": "https://secret-combinations.simplyoliveapps.com",
             "tags": ["solo", "personal"]
         },
         {
             "title": "Screen Slaver",
             "summary": "An in-browser \"Simon Says\" game. Try to beat the high score!",
-            "stack": ["Vue","JS","Node","mongo","heroku"],
+            "stack": ["Vue","Node","mongo","heroku"],
             "repoUrl": "https://github.com/amj311/screen-slaver",
             "previewUrl": "/apps/screenslaver.gif",
             "liveUrl": "https://screen-slaver.simplyoliveapps.com",
@@ -68,7 +85,7 @@ export const portfolioData = {
         {
             "title": "Cool Weather",
             "summary": "A sleek weather app with real-time data and location detection.",
-            "stack": ["Vue","JS"],
+            "stack": ["Vue"],
             "liveUrl": "https://weather.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/cool_weather",
             "previewUrl": "/apps/weather.gif",
@@ -77,8 +94,7 @@ export const portfolioData = {
         {
             "title": "Publish Link Generator",
             "summary": "A tool for generating links to create preset social media posts.",
-            "stack": ["Vue","JS"],
-            "liveUrl": "https://publisher.simplyoliveapps.com",
+            "stack": ["Vue"],
             "repoUrl": "https://github.com/amj311/auto-sm-publish-links",
             "previewUrl": "/apps/publisher.png",
             "tags": ["solo", "personal"]

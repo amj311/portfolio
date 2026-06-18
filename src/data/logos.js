@@ -1,4 +1,5 @@
 export const logos = {
+    "AI":"ai.png",
     "Vue":"vue.jpg",
     "React":"React-Logo-PNG.png",
     "Angular":"angular-icon-1-logo-png-transparent.png",
@@ -15,5 +16,6 @@ export const logos = {
     "SQL": "sql-logo.png",
     "Python": "Python_logo_icon.png",
     "OpenCV": "OpenCV_logo_black.png",
-    "WebSockets": "SOCKETIOICON.gif"
+    "WebSockets": "SOCKETIOICON.gif",
+    "OpenStreetMaps": "osm.png"
 }
