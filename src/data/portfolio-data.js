@@ -86,7 +86,6 @@ export const portfolioData = {
             "title": "Cool Weather",
             "summary": "A sleek weather app with real-time data and location detection.",
             "stack": ["Vue"],
-            "liveUrl": "https://weather.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/cool_weather",
             "previewUrl": "/apps/weather.gif",
             "tags": ["solo", "personal"]
