@@ -17,5 +17,6 @@ export const logos = {
     "Python": "Python_logo_icon.png",
     "OpenCV": "OpenCV_logo_black.png",
     "WebSockets": "SOCKETIOICON.gif",
-    "OpenStreetMaps": "osm.png"
+    "OpenStreetMaps": "osm.png",
+    "Ffmpeg": "ffmpeg.png"
 }

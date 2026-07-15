@@ -64,7 +64,7 @@
           </BannerSection>
           
           <BannerSection id="apps">
-            <h2>My Work</h2>
+            <h2>My Favorite Projects</h2>
             <br>
             <div id="liveapps">
               <ImageSortedAppList :list="data.apps"></ImageSortedAppList>
