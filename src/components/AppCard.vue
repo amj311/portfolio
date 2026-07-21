@@ -22,9 +22,9 @@
     </div>
   </div>
 
-	<div v-if="expanded" class="preview-expanded">
-	    <img class="preview-img" :src="app.previewUrl" :alt="`Preview of ${app.title}`" />
-		<div class="preview-closer" @click="expanded = false"><i class="fa fa-times" /></div>
+	<div v-if="expanded" class="preview-expanded" @click="expanded = false">
+	    <img class="preview-img" :src="app.previewUrl" :alt="`Preview of ${app.title}`" @click.stop />
+		<div class="preview-closer"><i class="fa fa-times" /></div>
 	</div>
 
 </div>
