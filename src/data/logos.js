@@ -19,5 +19,6 @@ export const logos = {
     "WebSockets": "SOCKETIOICON.gif",
     "OpenStreetMaps": "osm.png",
     "Ffmpeg": "ffmpeg.png",
-    "Playwright": "playwright.png"
+    "Playwright": "playwright.png",
+    "Plaid": "plaid.png"
 }

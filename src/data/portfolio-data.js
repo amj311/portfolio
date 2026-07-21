@@ -54,7 +54,7 @@ export const portfolioData = {
         {
             "title": "Delfi",
             "summary": "Beyond budgets: a financial forecaster for families and individuals. Plan for irregular expenses, prepare for emergencies, see the future impact of your budget in real time.",
-            "stack": ["Vue","TS","SQL","AI","Playwright"],
+            "stack": ["Vue","TS","SQL","AI","Playwright","Plaid"],
             "previewUrl": "/apps/delfi.gif",
             "liveUrl": "https://delfi.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/delfi-web",
