@@ -39,7 +39,7 @@ export const portfolioData = {
             "summary": "Gallery and client management system for photographers. Upload photos, deliver galleries, build a portfolio. Check out the demo gallery and the custom drag-and-drop homepage.",
             "stack": ["Vue","TS","SQL"],
             "previewUrl": "/apps/gallery.gif",
-            "liveUrl": "https://rflorencephoto.com/gallery-a",
+            "liveUrl": "https://rflorencephoto.com/demo",
             "tags": ["solo", "personal"]
         },
         {
