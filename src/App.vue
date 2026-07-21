@@ -19,7 +19,7 @@
                   <hr>
                   <!-- <ContactLinks :links="data.contact" style="font-size: 1.5em"></ContactLinks> -->
 				   <div class="hero-buttons">
-						<a class="hero-button" href="/ArthurJudd_Belle_2026.pdf" target="blank">
+						<a class="hero-button" href="/ArthurJudd_2026.pdf" target="blank">
 							<i class="material-symbols-outlined">download</i>
 							Resume
 						</a>
