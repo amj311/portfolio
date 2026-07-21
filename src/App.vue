@@ -30,7 +30,7 @@
 
 						<a class="hero-button" :href="data.contact.github.url" :title="data.contact.github.display" target="blank">
 							<i class="fab fa-github"></i>
-							{{data.contact.linkedin.display}}
+							{{data.contact.github.display}}
 						</a>
 				  </div>
 
