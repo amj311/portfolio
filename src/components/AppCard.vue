@@ -1,7 +1,8 @@
 <template>
   <div class="app-card card shadow-sm" style="">
   <div class="preview-wrapper" v-if="app.previewUrl">
-    <img class="preview-img" :src="app.previewUrl" alt="Preview of app">
+    <img class="preview-img" :src="app.previewUrl" :alt="`Preview of ${app.title}`" />
+	<div class="preview-opener" @click="expanded = true;"><i class="fa fa-expand" /></div>
   </div>
   <div class="card-body">
     <h5 class="card-title">{{app.title}}</h5>
@@ -20,6 +21,12 @@
       <a v-if="app.liveUrl" :href="app.liveUrl" target="blank" class="btn btn-primary card-link shadow-sm">See It</a>
     </div>
   </div>
+
+	<div v-if="expanded" class="preview-expanded">
+	    <img class="preview-img" :src="app.previewUrl" :alt="`Preview of ${app.title}`" />
+		<div class="preview-closer" @click="expanded = false"><i class="fa fa-times" /></div>
+	</div>
+
 </div>
 </template>
 
@@ -31,6 +38,7 @@ export default {
   props: ['app'],
   data() { return  {
     logos,
+	expanded: false,
   }},
 }
 </script>
@@ -69,6 +77,21 @@ img.preview-img {
     width: 100%;
 }
 
+.preview-opener {
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
+	padding: 0.3rem 0.6rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	color: #fff;
+	display: none;
+	background: #222b;
+}
+.preview-wrapper:hover .preview-opener {
+	display: block;
+}
+
 .stack-icon i {
     display: inline-block;
     width: var(--stack-icon-size);
@@ -93,5 +116,30 @@ span.stack-icon {
 
 .source-links {
   text-align: right;
+}
+
+.preview-expanded {
+	position: fixed;
+	inset: 0;
+	background: #000b;
+	z-index: 10;
+}
+.preview-expanded img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	width: auto;
+	max-width: calc(100% - 2rem);
+}
+
+.preview-closer {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	padding: 0.3rem 0.6rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	color: #fff;
 }
 </style>

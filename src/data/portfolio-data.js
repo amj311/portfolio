@@ -31,6 +31,7 @@ export const portfolioData = {
             "stack": ["Vue","TS","Ffmpeg"],
             "previewUrl": "/apps/oliveplex.gif",
             "repoUrl": "https://github.com/amj311/cine",
+            "liveUrl": "https://cine.simplyoliveapps.com/demo",
             "tags": ["solo", "personal"]
         },
         {
