@@ -7,8 +7,8 @@ export const portfolioData = {
     },
     "contact":{
         "email":{
-            "display":"contact@arthurjudd.com",
-            "url":"mailto:contact@arthurjudd.com?subject=Just%20Saying%20Hi&body=Hi%20Arthur!%0D%0A%0D%0AI%20was%20just%20looking%20at%20your%20website%20and%20I%20was%20very%20impressed%20so%20I%20thought%20I'd%20say%20hi!%20Let's%20work%20together%20sometime!%0D%0A%0D%0A%3CSign%20Here%3E"
+            "display":"amjudd315@gmail.com",
+            "url":"mailto:amjudd315@gmail.com?subject=Just%20Saying%20Hi&body=Hi%20Arthur!%0D%0A%0D%0AI%20was%20just%20looking%20at%20your%20website%20and%20I%20was%20very%20impressed%20so%20I%20thought%20I'd%20say%20hi!%20Let's%20work%20together%20sometime!%0D%0A%0D%0A%3CSign%20Here%3E"
         },
         "linkedin":{
             "display":"@ajudd311",
@@ -36,7 +36,7 @@ export const portfolioData = {
         },
         {
             "title": "Photo Gallery",
-            "summary": "Gallery and client management system for photographers. Upload photos, deliver galleries, build a portfolio. Check out the demo gallery and the custom drag-and-drop homepage",
+            "summary": "Gallery and client management system for photographers. Upload photos, deliver galleries, build a portfolio. Check out the demo gallery and the custom drag-and-drop homepage.",
             "stack": ["Vue","TS","SQL"],
             "previewUrl": "/apps/gallery.gif",
             "liveUrl": "https://rflorencephoto.com/gallery-a",
@@ -49,6 +49,15 @@ export const portfolioData = {
             "previewUrl": "/apps/talaria.gif",
             "liveUrl": "https://talaria.simplyoliveapps.com",
             "repoUrl": "https://github.com/amj311/ems_hospital_locator",
+            "tags": ["solo", "personal"]
+        },
+        {
+            "title": "Delfi",
+            "summary": "Beyond budgets: a financial forecaster for families and individuals. Plan for irregular expenses, prepare for emergencies, see the future impact of your budget in real time.",
+            "stack": ["Vue","TS","SQL","AI","Playwright"],
+            "previewUrl": "/apps/delfi.gif",
+            "liveUrl": "https://delfi.simplyoliveapps.com",
+            "repoUrl": "https://github.com/amj311/delfi-web",
             "tags": ["solo", "personal"]
         },
         {

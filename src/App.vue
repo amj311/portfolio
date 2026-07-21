@@ -17,7 +17,23 @@
                   <h1 style="font-size: 3em;">{{data.bio.firstname}} {{data.bio.lastname}}</h1>
                   <h4>{{data.bio.subtitle}}</h4>
                   <hr>
-                  <ContactLinks :links="data.contact" style="font-size: 1.5em"></ContactLinks>
+                  <!-- <ContactLinks :links="data.contact" style="font-size: 1.5em"></ContactLinks> -->
+				   <div class="hero-buttons">
+						<a class="hero-button" href="/ArthurJudd_Belle_2026.pdf" target="blank">
+							<i class="material-symbols-outlined">download</i>
+							Resume
+						</a>
+						<a class="hero-button" :href="data.contact.linkedin.url" :title="data.contact.linkedin.display" target="blank">
+							<i class="fab fa-linkedin"></i>
+							{{data.contact.linkedin.display}}
+						</a>
+
+						<a class="hero-button" :href="data.contact.github.url" :title="data.contact.github.display" target="blank">
+							<i class="fab fa-github"></i>
+							{{data.contact.linkedin.display}}
+						</a>
+				  </div>
+
               </div>
           </HeroSection>
 
@@ -339,9 +355,30 @@ section:not(.hero-wrapper) h4 {
     margin-left: 0;
 }
 
+.hero-buttons {
+	display: flex;
+	align-items: stretch;
+	gap: 0.5rem;
+}
 
+.hero-button {
+	border: 1px solid #fff;
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 0.5rem;
+	background: #0008;
+	color: #fff !important;
+	text-decoration: none !important;
+	cursor: pointer;
+	transition: 200ms;
+}
 
-
+.hero-button:hover {
+	background: #fff;
+	color: #000 !important;
+}
 
 
 

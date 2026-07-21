@@ -131,6 +131,7 @@ span.stack-icon {
 	translate: -50% -50%;
 	width: auto;
 	max-width: calc(100% - 2rem);
+	max-height: calc(100% - 2rem);
 }
 
 .preview-closer {

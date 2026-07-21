@@ -18,5 +18,6 @@ export const logos = {
     "OpenCV": "OpenCV_logo_black.png",
     "WebSockets": "SOCKETIOICON.gif",
     "OpenStreetMaps": "osm.png",
-    "Ffmpeg": "ffmpeg.png"
+    "Ffmpeg": "ffmpeg.png",
+    "Playwright": "playwright.png"
 }
