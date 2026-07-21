@@ -36,7 +36,7 @@ export const portfolioData = {
         },
         {
             "title": "Photo Gallery",
-            "summary": "Gallery and client management system for photographers. Upload photos, deliver galleries, build a portfolio.",
+            "summary": "Gallery and client management system for photographers. Upload photos, deliver galleries, build a portfolio. Check out the demo gallery and the custom drag-and-drop homepage",
             "stack": ["Vue","TS","SQL"],
             "previewUrl": "/apps/gallery.gif",
             "liveUrl": "https://rflorencephoto.com/gallery-a",
@@ -71,9 +71,9 @@ export const portfolioData = {
         },
         {
             "title": "Blueprint Estimator",
-            "summary": "A contractor's tool for analyzing complex blueprints and computing the cost of materials needed.",
+            "summary": "A contractor's tool for analyzing complex blueprints and computing the cost of materials needed. Uses machine learning to extract information from the blueprints.",
             "stack": ["Python","OpenCV","Vue","TS","Node"],
-            "previewUrl": "/apps/pdfviewer.gif",
+            "previewUrl": "/apps/text-extraction.gif",
             "tags": ["solo"]
         },
 		{
